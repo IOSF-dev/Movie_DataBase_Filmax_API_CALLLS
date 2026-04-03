@@ -4,11 +4,11 @@ const FooterComponent = () => {
   return (
 
     <>
-      <footer style={{backgroundColor:"#212529",height:"120px",display:"flex", justifyContent:"space-evenly",alignItems:"center", border:"2px solid black"}}>
+      <footer className='footer'>
         <div>
           <p>© 2025 MIAO Company, IOSF</p>
         </div>
-        <p> logo </p>
+        <img title="logo"src="/logo.png" alt="logo" />
         <div>
           <span> home </span>
           <span> Pricing </span>
