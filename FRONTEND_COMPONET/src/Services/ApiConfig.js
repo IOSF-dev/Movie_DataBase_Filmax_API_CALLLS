@@ -1,7 +1,6 @@
 
-export const apiConfig={
-    baseURL:`https://api.themoviedb.org/3/movie/`,
-        ApiKey:"a4eebd80d1f64fdddb023da9a6dd2d79",
-        urlImages : "https://image.tmdb.org/t/p/w500",  
-  
+export const apiConfig = {
+  baseURL: import.meta.env.VITE_BASE_URL,
+  ApiKey: import.meta.env.VITE_API_KEY,
+  urlImages: import.meta.env.VITE_URL_IMAGES,
 };

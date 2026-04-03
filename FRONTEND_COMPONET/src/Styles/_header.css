@@ -67,7 +67,21 @@ width: 100%;
     width: 100px;
 }
 .navBar_box2{
-
+display:flex;
+align-items: center;
+justify-content: space-evenly;
+gap: 26px;
+}
+.navBar_number{
+    font-size: 36px;
+}
+.BTN_PAGE_PREV, .BTN_PAGE_NEXT{
+    border-radius: 8px;
+    background-color: #e58f05;
+    color: #eee;
+    height: 50%;
+    font-size: 1.8rem;
+    font-weight: 500;
 }
 .navBar_box3{
 

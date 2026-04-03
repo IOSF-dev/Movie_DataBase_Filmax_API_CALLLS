@@ -1,8 +1,19 @@
 import React from 'react'
+import { apiConfig } from '../Services/ApiConfig';
 
-const MovieCardComponent = () => {
+const MovieCardComponent = (props) => {
+  const { movie } = props;
   return (
-    <div>MovieCardComponent</div>
+    <div>
+      
+       <div  className='cardComponent' >
+            <div ><img src={apiConfig.urlImages+movie.poster_path} alt="" className='cardPoster' /></div>
+            <h2>{movie.title}</h2>
+            <p><span>Score: {movie.vote_average} / Votos:{movie.vote_count} -</span>-Año: {movie.release_date}</p>
+            <p style={{margin:"10px"}}><span style={{fontSize:"20px", fontWeight:"700"}}>Descripcion:</span > {movie.overview}</p>
+          </div>
+          
+     </div>
   )
 }
 

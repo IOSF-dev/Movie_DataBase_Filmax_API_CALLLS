@@ -1,20 +1,18 @@
 
-//import { Link, useNavigate } from "react-router-dom"
+import { useState } from "react"
 
 
 
 
 
-const HeaderComponent = () => {
+const HeaderComponent = ({ category, onCategoryChange, page, onPageChange, onSearchSubmit }) => {
+  // SEARCH: estado local del input (no Redux, solo React)
+  const [searchText, setSearchText] = useState("");
   
   return (
     <header className='headerComponent'>
-      
       <section className='headerBar'>
-
-        
-        <img   src="../../public/logo.png" alt="" className='headerBar_logo'/>
-
+        <img src="/logo.png" alt="" className='headerBar_logo'/>
         <div className="headerBar_box1">
           <p>HOME </p>
           <p>FEATURES</p>
@@ -26,8 +24,21 @@ const HeaderComponent = () => {
 
         <div className="headerBar_box2">
 
-          <input type="text" className="INP_SEARCH" placeholder="Titulo de Pelicula...."/>
-          <button className="BTN_SEARCH">BUSCAR</button>
+          {/* SEARCH: input controlado con value + onChange */}
+          <input
+            type="text"
+            className="INP_SEARCH"
+            placeholder="Titulo de Pelicula...."
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
+          />
+          {/* SEARCH: enviamos el texto al padre para disparar la busqueda */}
+          <button
+            className="BTN_SEARCH"
+            onClick={() => onSearchSubmit(searchText)}
+          >
+            BUSCAR
+          </button>
 
         </div>
 
@@ -40,16 +51,35 @@ const HeaderComponent = () => {
           
           <button className="BTN_LIST">list</button>
         </div>
+        {/* PAGINAS: control simple de paginado */}
         <div className="navBar_box2">
-          <h3>Page 1</h3>
+
+          <button className="BTN_PAGE_PREV" onClick={() => onPageChange(page - 1)}disabled={page <= 1}>
+           ←
+          </button>
+          <h2 className="navBar_number">{page}</h2>
+
+          <button
+            className="BTN_PAGE_NEXT"
+            onClick={() => onPageChange(page + 1)}
+          >
+            →
+          </button>
           
         </div>
+        {/* SELECT: categoria actual + cambio de categoria */}
         <div className="navBar_box3">
-          <select name="" id="" className="INP_SLC">
-            <option value="">popular</option>
-            <option value="">up_coming</option>
-            <option value="">now_playing</option>
-            <option value="">best_rated</option>
+          <select
+            name="category"
+            id="category"
+            className="INP_SLC"
+            value={category}
+            onChange={(e) => onCategoryChange(e.target.value)}
+          >
+            <option value="popular">Populares</option>
+            <option value="upcoming">Proximamente</option>
+            <option value="now_playing">En Cartelera</option>
+            <option value="top_rated">Mejor Valoradas</option>
           </select>
         </div>
       </nav>
