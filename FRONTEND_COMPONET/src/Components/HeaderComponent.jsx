@@ -5,7 +5,7 @@ import { useState } from "react"
 
 
 
-const HeaderComponent = ({ category, onCategoryChange, page, onPageChange, onSearchSubmit }) => {
+const HeaderComponent = ({ category, onCategoryChange, page, onPageChange, onSearchSubmit, onViewModeChange  }) => {
   // SEARCH: estado local del input (no Redux, solo React)
   const [searchText, setSearchText] = useState("");
   
@@ -47,9 +47,9 @@ const HeaderComponent = ({ category, onCategoryChange, page, onPageChange, onSea
 
       <nav className='navBar'>
         <div className="navBar_box1">
-          <button className="BTN_GRID">grid</button>
+          <button className="BTN_GRID" onClick={() => onViewModeChange ("grid")}>grid</button>
           
-          <button className="BTN_LIST">list</button>
+          <button className="BTN_LIST" onClick={() => onViewModeChange ("list")}>list</button>
         </div>
         {/* PAGINAS: control simple de paginado */}
         <div className="navBar_box2">

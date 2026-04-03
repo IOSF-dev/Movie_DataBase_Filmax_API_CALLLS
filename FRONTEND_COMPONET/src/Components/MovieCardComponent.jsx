@@ -2,18 +2,28 @@ import React from 'react'
 import { apiConfig } from '../Services/ApiConfig';
 
 const MovieCardComponent = (props) => {
-  const { movie } = props;
+  const { movie, viewMode } = props;
   return (
-    <div>
+  
       
-       <div  className='cardComponent' >
-            <div ><img src={apiConfig.urlImages+movie.poster_path} alt="" className='cardPoster' /></div>
-            <h2>{movie.title}</h2>
-            <p><span>Score: {movie.vote_average} / Votos:{movie.vote_count} -</span>-Año: {movie.release_date}</p>
-            <p style={{margin:"10px"}}><span style={{fontSize:"20px", fontWeight:"700"}}>Descripcion:</span > {movie.overview}</p>
+       <div title={movie.title} className= { `cardComponent ${viewMode === "grid"? "column" : "row"}`}>
+            <div className="cardMedia">
+              <img src={apiConfig.urlImages+movie.poster_path} alt={movie.title || "Poster"} className='cardPoster' />  
+            </div>
+            <div className='cardBox0'>
+
+               <div className='cardBox1'>
+              <p><span>Score: {movie.vote_average} / Votos:{movie.vote_count} -</span>-Ano: {movie.release_date}</p>
+            </div>
+            <div className='cardBox2'>
+              <p className='cardBox2_des' style={{margin:"10px"}}><span className="cardDescLabel">Descripcion:</span> {movie.overview}</p>
+            </div>
+            </div>
+           
+            
           </div>
           
-     </div>
+  
   )
 }
 

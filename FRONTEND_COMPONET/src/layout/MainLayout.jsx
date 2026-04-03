@@ -11,7 +11,7 @@ const MainLayout = () => {
   
   const [page, setPage] = useState(1);// Control de paginado (se reinicia al cambiar categoria o buscar)
   const [searchQuery, setSearchQuery] = useState("");  // Texto de busqueda actual
-
+  const [ viewMode, setViewMode]= useState("grid");
 
   const handleCategoryChange = (c) => {// Cambiar categoria y volver a pagina 1 (para no quedar en pagina alta)
     setCategory(c);
@@ -22,6 +22,9 @@ const MainLayout = () => {
     setSearchQuery(query);
     setPage(1);
   };
+  const handlerView = (v)=>{
+    setViewMode(v);
+  }
 
   return (
       <>
@@ -31,9 +34,10 @@ const MainLayout = () => {
       page={page}
       onPageChange={setPage}
       onSearchSubmit={handleSearchSubmit}
+      onViewModeChange ={handlerView}
     />
     {/* Pasamos datos y estado a las pages sin Redux, usando context de react-router */}
-    <Outlet context={{ category, page, searchQuery }} />
+    <Outlet context={{ category, page, searchQuery, viewMode }} />
     <FooterComponent/>
     </>
   )

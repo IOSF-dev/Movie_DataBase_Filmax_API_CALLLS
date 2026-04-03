@@ -1,28 +1,51 @@
-@import url(_cardComponent.css);
-
-
-.mainContaeiner{
-     padding:1% 5% 1% 5%;
-     height:100%;
-      display:grid;
-grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      grid-template-rows: auto;
-  gap: 1%;
-  
-  background-color:#212529;
-  color:#fefefe;
-
+.mainContainer {
+      padding: 1% 5% 4% 5%;
+      min-height: 100%;
+      background-color: #212529;
+      color: #fefefe;
+      gap: 1.2%;
+      box-sizing: border-box;
 }
 
-.cardComponent{
-    background-color:#eeeeee44;
-     padding-top:10px;
-     display:flex;
-     flex-direction:column;
-     align-items:center;
-     text-align:center;
-     text-wrap:pretty;
-     color:#eee;
-     height:auto;
-      border-radius:16px;
+.mainContainer.grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      grid-template-rows: auto;
+      grid-auto-rows: 1fr;
+      row-gap: 1.2%;
+      column-gap: 1.2%;
+}
+
+.mainContainer.list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding-left: 6%;
+      padding-right: 6%;
+}
+
+.mainContainer.grid .cardComponent {
+      height: 100%;
+}
+
+.mainContainer.list .cardComponent {
+      flex-direction: row;
+      align-items: center;
+      gap: 20px;
+      padding: 18px 22px;
+      width: 100%;
+      box-sizing: border-box;
+      border-radius: 18px;
+
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 720px) {
+      .mainContainer.grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .mainContainer.grid .cardPoster{
+            width: 100%;
+            max-width: 180px;
+      }
 }

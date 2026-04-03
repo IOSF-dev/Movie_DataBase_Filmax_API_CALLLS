@@ -6,7 +6,7 @@ import MovieCardComponent from "../Components/MovieCardComponent";
 
 const MoviesHomePage = () => {
   // Recibimos datos del layout (no Redux) via Outlet context
-  const { category, page, searchQuery } = useOutletContext();
+  const { category, page, searchQuery, viewMode } = useOutletContext();
 
   const [data,setData] = useState([]);
 
@@ -26,14 +26,15 @@ const MoviesHomePage = () => {
   return (
     
      <>
-      <div className='mainContaeiner' >
+     
+      <div  className= { `mainContainer ${viewMode === "grid"? "grid" : "list"}`}>
         {!data || data.length === 0 ? (
             <div>
               <h3>Cargando movies...</h3>
             </div>
         )  :  (
           data.map((u) => (
-            <MovieCardComponent key={u.id} movie={u}  className='cardComponent'/>
+            <MovieCardComponent key={u.id} movie={u} viewMode={viewMode}  className='cardComponent'/>
          ))
          )
          

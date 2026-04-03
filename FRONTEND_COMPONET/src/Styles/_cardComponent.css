@@ -1,17 +1,84 @@
 .cardComponent{
-    background-color:#eeeeee63;
-     padding-top:10px;
-     display:flex;
-     flex-direction:column;
-     align-items:center;
-     text-align:center;
-     text-wrap:pretty;
+    background-color:#eeeeee6c;
+     padding:10px;
      color:#eee;
      height:auto;
-      border-radius:16px;
+     border-radius:16px;
+     display: flex;
+     flex-direction: column;
+     align-items:center;
+     text-align:center;
+     text-wrap: pretty;
+}
+.cardComponent.column{
+   flex-direction: column;
+}
+.cardComponent.row {
+   flex-direction: row;
+}
+.cardComponent.row .cardBox0{
+   display: flex;
+   flex-direction: column;
+}
+.cardComponent.row .cardBox2_des{
+   font-size: clamp(1.05rem, 1.1vw + 0.7rem, 2.6rem);
 }
 .cardPoster{
    height:auto;
    width:85%;
    border-radius:16px;
+   object-fit: cover;
+}
+
+.cardComponent p{
+   font-size: clamp(1rem, 0.6vw + 0.9rem, 1.6rem);
+   line-height: 1.35;
+}
+
+.cardComponent p:last-of-type{
+   display: -webkit-box;
+   -webkit-line-clamp: 4;
+   -webkit-box-orient: vertical;
+   overflow: hidden;
+}
+
+.mainContainer.grid .cardPoster{
+   width: clamp(190px, 20vw, 320px);
+   max-width: 100%;
+}
+
+.mainContainer.list .cardPoster{
+   width: clamp(160px, 22vw, 260px);
+   min-width: 140px;
+   max-width: 280px;
+}
+
+.cardMedia{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 8px;
+   width: auto;
+   flex: 0 0 auto;
+}
+
+.cardLabel{
+   font-size: clamp(1.1rem, 0.9vw + 0.8rem, 1.9rem);
+   font-weight: 700;
+   text-align: left;
+}
+
+.mainContainer.list .cardComponent p{
+   text-align: left;
+}
+
+.mainContainer.list .cardDescLabel{
+   display: inline-block;
+   margin-right: 6px;
+}
+
+.cardDescLabel{
+   font-weight: 800;
+   color: #ffd166;
+   letter-spacing: 0.02em;
 }
