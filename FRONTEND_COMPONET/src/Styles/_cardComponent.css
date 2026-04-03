@@ -1,0 +1,17 @@
+.cardComponent{
+    background-color:#eeeeee63;
+     padding-top:10px;
+     display:flex;
+     flex-direction:column;
+     align-items:center;
+     text-align:center;
+     text-wrap:pretty;
+     color:#eee;
+     height:auto;
+      border-radius:16px;
+}
+.cardPoster{
+   height:auto;
+   width:85%;
+   border-radius:16px;
+}
