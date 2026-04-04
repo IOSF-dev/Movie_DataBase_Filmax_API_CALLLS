@@ -46,11 +46,12 @@ const HeaderComponent = ({ category, onCategoryChange, page, onPageChange, onSea
       </section>
 
       <nav className='navBar'>
+
         <div className="navBar_box1">
           <button className="BTN_GRID" onClick={() => onViewModeChange ("grid")}>grid</button>
-          
           <button className="BTN_LIST" onClick={() => onViewModeChange ("list")}>list</button>
         </div>
+
         {/* PAGINAS: control simple de paginado */}
         <div className="navBar_box2">
 
@@ -65,8 +66,10 @@ const HeaderComponent = ({ category, onCategoryChange, page, onPageChange, onSea
           >
             →
           </button>
-          
+        
         </div>
+
+        
         {/* SELECT: categoria actual + cambio de categoria */}
         <div className="navBar_box3">
           <select

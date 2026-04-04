@@ -1,12 +1,20 @@
 import React from 'react'
 import { apiConfig } from '../Services/ApiConfig';
+import { useNavigate } from 'react-router-dom';
+
 
 const MovieCardComponent = (props) => {
+
   const { movie, viewMode } = props;
+  const navigate = useNavigate()
+     const goToDetails = () => { // funcion que realiza la navegacion a details con el parametro de ID
+      navigate(`/details/${movie.id}`)
+    }
+
   return (
   
       
-       <div title={movie.title} className= { `cardComponent ${viewMode === "grid"? "column" : "row"}`}>
+       <div title={movie.title} className= { `cardComponent ${viewMode === "grid"? "column" : "row"}`} onClick={goToDetails}>
             <div className="cardMedia">
               <img src={apiConfig.urlImages+movie.poster_path} alt={movie.title || "Poster"} className='cardPoster' />  
             </div>

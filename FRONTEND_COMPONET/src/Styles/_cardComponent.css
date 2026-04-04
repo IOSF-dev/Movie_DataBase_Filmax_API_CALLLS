@@ -9,12 +9,18 @@
      align-items:center;
      text-align:center;
      text-wrap: pretty;
+     box-sizing: border-box;
 }
 .cardComponent.column{
    flex-direction: column;
 }
 .cardComponent.row {
+    width: 100%;
    flex-direction: row;
+   border-radius: 18px;
+         gap: 20px;
+      padding: 18px 22px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
 }
 .cardComponent.row .cardBox0{
    display: flex;
