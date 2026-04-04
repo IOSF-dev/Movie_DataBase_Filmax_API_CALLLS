@@ -32,34 +32,47 @@ useEffect(()=>{
   return (
 
     <>
-     {!movie ? (
+     {!movie?.credits ? (
         <div>
           <h3>Cargando los detalles de la Pelicula</h3>
         </div>
       ) : (
         <>
-        <section  style={{display:"flex"}}>
-            <img className='DetailsPoster' src={apiConfig.urlImages+movie.poster_path} alt={movie.title || "Poster"} /> 
-          <div>
-            <div>
-               <p>Name: {movie.title ?? ""} </p>
-             <p>Score: {movie.vote_average}</p>
-             <p>Votos: {movie.vote_count}</p>
-             <p>Año: {movie.release_date}</p>
-              <p ><span>Descripcion:</span> {movie.overview}</p>
-            </div>
-            
+        <section
+          className='detailsContainer'
+          style={{ backgroundImage: `url(${apiConfig.urlImages + movie.poster_path})` }}
+        >
+          <div className='leftBox'>
+<img className='detailsPoster' src={apiConfig.urlImages+movie.poster_path} alt={movie.title || "Poster"} />
           </div>
-          
-        </section>
-      <section style={{display:"flex"}}>
-                    {movie.credits.cast.slice(0,7).map((u,idx) => (
-          <div key={idx} >
-          <img className="actorImg"src={apiConfig.urlImages+u.profile_path} alt="" />
-            <p>Nombre: {u.name} <span>/ Papel: {u.character}</span></p>
+             
+          <div className='rigthBox'>
+            <div className='upperBox'>
+               <h1 className='detailsTitle'>{movie.title ?? ""}</h1>
+               <div style={{textAlign:"center"}}>
+               <p className='detailsData'><span className='detailsDataSPAN'>Año:</span> {movie.release_date}</p>
+               <span className='detailsData'>Score: {movie.vote_average} -<span className='detailsData'> Votos: {movie.vote_count}</span></span>
+               </div>
+              <p className='detailsData'><span className='detailsDataSPAN'>Descripcion:</span><br /> {movie.overview}</p>
+            </div>
+
+
+             <section className='actorSection' >
+                    {movie?.credits?.cast.slice(0,7).map((u,idx) => (
+          <div className="actorBox" key={idx} >
+            <img className="actorImg"src={apiConfig.urlImages+u.profile_path} alt="" />
+                      <div className="actorDetails">
+                        <p className='detailsDataSPAN'>{u.name}</p>
+                        <p style={{textWrap:"wrap"}}>{u.character}</p>
+                      </div>
+           
           </div>
         ))}
       </section>
+          </div>
+          
+        </section>
+     
       
               
       </>
