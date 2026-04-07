@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getMovieById } from '../Services/ApiFetch';
 import { apiConfig } from '../Services/ApiConfig';
 
@@ -10,13 +10,12 @@ import { apiConfig } from '../Services/ApiConfig';
 const DetailsPage = () => {
 
     const params = useParams();//Llamamos al hoock useParams
-  const navigate = useNavigate();///llamamos al hoock useNavigate
+ ///llamamos al hoock useNavigate
   const id = params.movieId; ///rescatamos el parametro id de la URL
   const [movie , setMovie]= useState({});
 
 
-  const backToHome = () => { navigate("/"); }///funcion para navegar al home
-
+  
 
 const loadUser = async ()=>{
   const aux = await getMovieById(id)
@@ -32,6 +31,7 @@ useEffect(()=>{
   return (
 
     <>
+
      {!movie?.credits ? (
         <div>
           <h3>Cargando los detalles de la Pelicula</h3>

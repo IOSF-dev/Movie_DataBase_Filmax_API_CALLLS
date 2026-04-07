@@ -29,15 +29,19 @@ const MainLayout = () => {
   return (
       <>
     <HeaderComponent
-      category={category}
-      onCategoryChange={handleCategoryChange}
-      page={page}
-      onPageChange={setPage}
       onSearchSubmit={handleSearchSubmit}
-      onViewModeChange ={handlerView}
     />
     {/* Pasamos datos y estado a las pages sin Redux, usando context de react-router */}
-    <Outlet context={{ category, page, searchQuery, viewMode }} />
+    <Outlet context={{
+      category,
+      page,
+      searchQuery,
+      viewMode,
+      onCategoryChange: handleCategoryChange,
+      onPageChange: setPage,
+      onViewModeChange: handlerView
+    }} />
+
     <FooterComponent/>
     </>
   )

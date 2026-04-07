@@ -1,24 +1,31 @@
 
 import { useState } from "react"
+import { useNavigate } from "react-router-dom";
 
 
 
 
 
-const HeaderComponent = ({ category, onCategoryChange, page, onPageChange, onSearchSubmit, onViewModeChange  }) => {
+const HeaderComponent = ({  onSearchSubmit }) => {
   // SEARCH: estado local del input (no Redux, solo React)
   const [searchText, setSearchText] = useState("");
+    const navigate = useNavigate();
+  const goHome = () => {
+    navigate("/")
+  }
   
   return (
     <header className='headerComponent'>
       <section className='headerBar'>
-        <img src="/logo.png" alt="" className='headerBar_logo'/>
+        <div className="logoBox">
+        <img src="/logo2.svg" alt="" className='headerBar_logo'  onClick={goHome}/>
+        </div>
         <div className="headerBar_box1">
-          <p>HOME </p>
-          <p>FEATURES</p>
-          <p>PRICING</p>
-          <p>FAQS</p>
-          <p>ABOUT</p>
+          <p onClick={goHome} style={{color:"#ffd166", cursor: "pointer"}}>HOME </p>
+          <p style={{ cursor: "pointer"}}>FEATURES</p>
+          <p style={{ cursor: "pointer"}}>PRICING</p>
+          <p style={{ cursor: "pointer"}}>FAQS</p>
+          <p onClick={goHome} style={{color:"#ffd166", cursor: "pointer"}}>ABOUT US</p>
         </div>
 
 
@@ -45,47 +52,7 @@ const HeaderComponent = ({ category, onCategoryChange, page, onPageChange, onSea
 
       </section>
 
-      <nav className='navBar'>
 
-        <div className="navBar_box1">
-          <button className="BTN_GRID" onClick={() => onViewModeChange ("grid")}>grid</button>
-          <button className="BTN_LIST" onClick={() => onViewModeChange ("list")}>list</button>
-        </div>
-
-        {/* PAGINAS: control simple de paginado */}
-        <div className="navBar_box2">
-
-          <button className="BTN_PAGE_PREV" onClick={() => onPageChange(page - 1)}disabled={page <= 1}>
-           ←
-          </button>
-          <h2 className="navBar_number">{page}</h2>
-
-          <button
-            className="BTN_PAGE_NEXT"
-            onClick={() => onPageChange(page + 1)}
-          >
-            →
-          </button>
-        
-        </div>
-
-        
-        {/* SELECT: categoria actual + cambio de categoria */}
-        <div className="navBar_box3">
-          <select
-            name="category"
-            id="category"
-            className="INP_SLC"
-            value={category}
-            onChange={(e) => onCategoryChange(e.target.value)}
-          >
-            <option value="popular">Populares</option>
-            <option value="upcoming">Proximamente</option>
-            <option value="now_playing">En Cartelera</option>
-            <option value="top_rated">Mejor Valoradas</option>
-          </select>
-        </div>
-      </nav>
 
     </header>
   )
