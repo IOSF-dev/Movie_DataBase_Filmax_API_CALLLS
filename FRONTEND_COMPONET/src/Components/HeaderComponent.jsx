@@ -1,47 +1,46 @@
-
+/////////////////IMPORT COLLECTION/////////////////////////////
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
+///////////////////////////////////////////////////////////////////////////////////
 
 
 
 
-
-const HeaderComponent = ({  onSearchSubmit }) => {
-  // SEARCH: estado local del input (no Redux, solo React)
+const HeaderComponent = ({ onSearchSubmit }) => {
+  ////////////////////CONST-COLLECTION//////////////////////
   const [searchText, setSearchText] = useState("");
-    const navigate = useNavigate();
-  const goHome = () => {
-    navigate("/")
-  }
-  
+  const navigate = useNavigate();
+  const goHome = () => { navigate("/") }
+////////////////////////////////////////////////////////////////////////////////////
+
   return (
     <header className='headerComponent'>
-      <section className='headerBar'>
-        <div className="logoBox">
-        <img src="/logo2.svg" alt="" className='headerBar_logo'  onClick={goHome}/>
+      <nav className='header_Nav'>
+        <div className="header_Logo-Box">
+          <img title="Logo Filmax" src="/logo2.svg" alt="Comercial Logo of Filmax Company" className='header_Logo' onClick={goHome} />
         </div>
-        <div className="headerBar_box1">
-          <p onClick={goHome} style={{color:"#ffd166", cursor: "pointer"}}>HOME </p>
-          <p style={{ cursor: "pointer"}}>FEATURES</p>
-          <p style={{ cursor: "pointer"}}>PRICING</p>
-          <p style={{ cursor: "pointer"}}>FAQS</p>
-          <p onClick={goHome} style={{color:"#ffd166", cursor: "pointer"}}>ABOUT US</p>
+        <div className="header_Nav-Box1">
+          <p className="header_Box1-Item--A" onClick={goHome} >HOME </p>
+          <p className="header_Box1-Item--B" style={{ cursor: "pointer" }}>FEATURES</p>
+          <p className="header_Box1-Item--B" style={{ cursor: "pointer" }}>PRICING</p>
+          <p className="header_Box1-Item--B" style={{ cursor: "pointer" }}>FAQS</p>
+          <p className="header_Box1-Item--A" onClick={goHome} >ABOUT US</p>
         </div>
 
 
-        <div className="headerBar_box2">
+        <div className="header_Box2">
 
           {/* SEARCH: input controlado con value + onChange */}
           <input
             type="text"
-            className="INP_SEARCH"
-            placeholder="Titulo de Pelicula...."
+            className="header_Box2-Item--A"
+            placeholder=" Titulo de Pelicula...."
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />
           {/* SEARCH: enviamos el texto al padre para disparar la busqueda */}
           <button
-            className="BTN_SEARCH"
+            className="header_Box2-Item--B"
             onClick={() => onSearchSubmit(searchText)}
           >
             BUSCAR
@@ -50,7 +49,7 @@ const HeaderComponent = ({  onSearchSubmit }) => {
         </div>
 
 
-      </section>
+      </nav>
 
 
 

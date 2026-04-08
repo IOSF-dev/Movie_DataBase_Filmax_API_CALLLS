@@ -3,7 +3,8 @@
 @import url(./Styles/homePage.css);
 @import url(./Styles/_header.css);
 @import url(./Styles/_footer.css);
-@import url(./Styles/_detailsPage.css);
+@import url(./Styles/detailsPage.css);
+@import url(./Styles/_navBar.css)
 
 
 

@@ -1,6 +1,8 @@
+/////////////////IMPORT COLLECTION/////////////////////////////
 import React from 'react'
+/////////////////////////////////////////////////////////////
 
-const NavComponent = ({
+const NavComponent = ({ // Recibimos datos del layout via Outlet context
   category,
   page,
   onCategoryChange,
@@ -13,20 +15,19 @@ const NavComponent = ({
     <>
           <nav className='navBar'>
 
-        <div className="navBar_box1">
+        <div className="navBar_Box1-Empty">
       
         </div>
 
         {/* PAGINAS: control simple de paginado */}
-        <div className="navBar_box2">
+        <div className="navBar_Box2">
 
-          <button className="BTN_PAGE_PREV" onClick={() => onPageChange(page - 1)}disabled={page <= 1}>
+          <button className="navBar_Box2-BackBTN" onClick={() => onPageChange(page - 1)}disabled={page <= 1}>
        
           </button>
-          <h2 className="navBar_number">{page}</h2>
-
+          <h2 className="navBar_Box2-Number">{page}</h2>
           <button
-            className="BTN_PAGE_NEXT"
+            className="navBar_Box2-FrontBTN"
             onClick={() => onPageChange(page + 1)}
           >
           
@@ -36,11 +37,11 @@ const NavComponent = ({
 
         
         {/* SELECT: categoria actual + cambio de categoria */}
-        <div className="navBar_box3">
-         <span className='label_select'> Mostrar por:</span><select
+        <div className="navBar_Box3">
+         <span className='navBar_Box3-Label'> Mostrar por:</span><select
             name="category"
             id="category"
-            className="INP_SLC"
+            className="navBar_Box3-Select"
             value={category}
             onChange={(e) => onCategoryChange(e.target.value)}
           >
@@ -50,10 +51,10 @@ const NavComponent = ({
             <option value="top_rated">Mejor Valoradas</option>
           </select>
           
-             <div className='subBox'>  
-        <span className='label_select'>Modo de vista: </span>  
-          <button className="BTN_GRID" onClick={() => onViewModeChange ("grid")}></button>
-          <button className="BTN_LIST" onClick={() => onViewModeChange ("list")}></button>
+             <div className='navBar_Box4'>  
+        <span className='navBar_Box3-Label'>Modo de vista: </span>  
+          <button className="navBar_Box4-BTN_GRID" onClick={() => onViewModeChange ("grid")}></button>
+          <button className="navBar_Box4-BTN_LIST" onClick={() => onViewModeChange ("list")}></button>
         </div>
         </div>
        

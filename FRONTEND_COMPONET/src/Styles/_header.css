@@ -1,7 +1,9 @@
+/*****************ROOT*************************************************************************/
 .headerComponent{
     width: 100%;
 }
-.headerBar{
+/*----------------MAIN------------------------------------------------------------------*/
+.header_Nav{
     background-color:#212529;
     height:80px;
     color:#eee;
@@ -11,7 +13,8 @@
       border:2px solid black;
 width: 100%;
 }
-.logoBox{
+/*---------------FIRST-CHILD--------------------------------------------------------------------------*/
+.header_Logo-Box{
   
     width: 33%;
     height: 100%;
@@ -19,12 +22,13 @@ width: 100%;
     align-items: center;
     justify-content: center;
 }
-.headerBar_logo{
+.header_Logo{
     width: 42%;
     height: auto;
 cursor: pointer;
 }
-.headerBar_box1{
+/*-------------------SECOND-CHILD--------------------------------------------------------------------*/
+.header_Nav-Box1{
    
     width: 33%;
     height: 100%;
@@ -33,7 +37,15 @@ cursor: pointer;
     justify-content: space-evenly;
     align-items: center;
 }
-.headerBar_box2{
+.header_Box1-Item--A{
+    color:#ffd166;
+     cursor: pointer;
+}
+.header_Box1-Item--B{
+    color: #eee;
+}
+/*-------------------LAST-CHILD---------------------------------------------------------------*/
+.header_Box2{
     padding-right: 10px;
     display: flex;
     justify-content: center;
@@ -42,7 +54,7 @@ cursor: pointer;
 width: 33%;
 height: 100%;
 }
-.INP_SEARCH{
+.header_Box2-Item--A{
     font-size: 1em;
     padding: 6px;
     padding-left: 10px;
@@ -50,7 +62,7 @@ height: 100%;
     width: 200px;
     height: 30px;
 }
-.BTN_SEARCH{
+.header_Box2-Item--B{
     cursor: pointer;
     padding: 6px;
     font-size: 1.25rem;
@@ -62,96 +74,3 @@ height: 100%;
     color: #eee;
 }
 /********************************************************************************/
-.navBar{
-    height: 60px;
-    width: 100%;
-    background-color:#eee;
-    display:flex;
-     justify-content:space-between;
-    align-items:center;
-    border:2px solid black;
-   
-}
-.navBar_box1{
-display: flex;
-justify-content: center;
-align-items: center;
-height: 100%;
-width:33%;
-}
-.BTN_GRID{
-    background: url(/grid-layout.svg);
-    background-position: center;
-}
-.BTN_LIST{
-    background: url(/list-layout.svg);
-}
-.BTN_GRID, .BTN_LIST{
-        font-size: 1em;
-    border-radius: 10px;
-    margin: 0 5px;
-   background-repeat: no-repeat;
-   background-position: center;
-    width: 40px;
-    height: 35px;
-    border: none;
-    cursor: pointer;
-}
-
-.navBar_box2{
-    width: 33%;
-display:flex;
-align-items: center;
-justify-content: center;
-gap: 5%;
-}
-.navBar_number{
-    font-size:26px;
-}
-.BTN_PAGE_PREV{
-
-    background: url(/left_icon.svg);
-    background-repeat: no-repeat;
-}
-.BTN_PAGE_NEXT{
-    background: url(/rigth_icon.svg);
-        background-repeat: no-repeat;
-    color: #eee;
-}
-.BTN_PAGE_PREV, .BTN_PAGE_NEXT{
-    cursor: pointer;
-    border-radius: 50%;
-    background-color: #e58f05;
-    width: 25px;
-    height: 25px;
-    background-size: cover;    
-    border: none;
-}
-.navBar_box3{
-width: 33%;
-display: flex;
-align-items: center;
-justify-content: center;
-padding-right: 0px;
-}
-.label_select{
-    font-size: 14px;
-    font-weight: bold;
-    padding: 4px;
-}
-.INP_SLC{
-    cursor: pointer;
-    padding: 4px;
-    margin-left: 4px;
-    margin-right: 10px;
-    border-radius: 16px;
-    width: 8rem;
-    height:2rem;
-}
-.subBox{
-    height: 100%;
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}

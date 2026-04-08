@@ -6,7 +6,7 @@ import NavComponent from "../Components/NavComponent";
 
 const MoviesHomePage = () => {
 
-  // Recibimos datos del layout (no Redux) via Outlet context
+  // Recibimos datos del layout via Outlet context
   const {
     category,
     page,
@@ -16,21 +16,20 @@ const MoviesHomePage = () => {
     onPageChange,
     onViewModeChange
   } = useOutletContext();
-
-
-  const [data, setData] = useState([]);
-
+  const [movies, setMovies] = useState([]); 
   const loadMovies = async () => {
     // Si hay texto de busqueda, usamos search; si no, traemos por categoria
     const aux = searchQuery?.trim()
-      ? await searchMovies(searchQuery, page)
+      ? await searchMovies(searchQuery, page) //si hay texto llama a searchMovies, sino al getAllMovies (con categoria)
       : await getAllMovies(category, page);
-    setData(aux?.results ?? []);
+    setMovies(aux?.results ?? []);// si hay datos guay, sino dame un array vacio 
   }
 
   useEffect(() => {
     // Recargar cuando cambia categoria, pagina o search
+///creo que me voy enterando de las dependencia que oye el useEffect
 
+//NOTA PARA ALEX: OYE ME TIENE SIEMPRE EL WARNING DEL VSC SIEMPRE MARCADO EL USEEFFECT LE PREGUNTE A LA ia POR UNA SOLUCION Y EL USEEFFECT QUE ME ENSEÑO ERA GRANDISIMO...NO SE YO ENTENDER TODAVIA COMO ARREGLAR ESTO....ME DA TOC DEL BUENO
     loadMovies();
   }, [category, page, searchQuery])
 
@@ -47,12 +46,12 @@ const MoviesHomePage = () => {
       />
 
       <div className={`mainContainer ${viewMode === "grid" ? "grid" : "list"}`}>
-        {!data || data.length === 0 ? (
+        {!movies || movies.length === 0 ? (
           <div>
             <h3>Cargando movies...</h3>
           </div>
         ) : (
-          data.map((u) => (
+          movies.map((u) => (
             <MovieCardComponent key={u.id} movie={u} viewMode={viewMode} className='cardComponent' />
           ))
         )
