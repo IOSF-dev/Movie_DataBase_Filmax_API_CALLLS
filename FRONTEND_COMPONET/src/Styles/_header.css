@@ -1,35 +1,39 @@
 /*****************ROOT*************************************************************************/
-.headerComponent{
+.headerComponent {
     width: 100%;
 }
+
 /*----------------MAIN------------------------------------------------------------------*/
-.header_Nav{
-    background-color:#212529;
-    height:80px;
-    color:#eee;
-    display:flex;
-     justify-content:space-evenly;
-     align-items:center;
-      border:2px solid black;
-width: 100%;
+.header_Nav {
+    background-color: #212529;
+    height: 80px;
+    color: #eee;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 2px solid black;
+    width: 100%;
 }
+
 /*---------------FIRST-CHILD--------------------------------------------------------------------------*/
-.header_Logo-Box{
-  
+.header_Logo-Box {
+
     width: 33%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.header_Logo{
+
+.header_Logo {
     width: 42%;
     height: auto;
-cursor: pointer;
+    cursor: pointer;
 }
+
 /*-------------------SECOND-CHILD--------------------------------------------------------------------*/
-.header_Nav-Box1{
-   
+.header_Nav-Box1 {
+
     width: 33%;
     height: 100%;
     font-size: 20px;
@@ -37,24 +41,28 @@ cursor: pointer;
     justify-content: space-evenly;
     align-items: center;
 }
-.header_Box1-Item--A{
-    color:#ffd166;
-     cursor: pointer;
+
+.header_Box1-Item--A {
+    color: #ffd166;
+    cursor: pointer;
 }
-.header_Box1-Item--B{
+
+.header_Box1-Item--B {
     color: #eee;
 }
+
 /*-------------------LAST-CHILD---------------------------------------------------------------*/
-.header_Box2{
+.header_Box2 {
     padding-right: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
 
-width: 33%;
-height: 100%;
+    width: 33%;
+    height: 100%;
 }
-.header_Box2-Item--A{
+
+.header_Box2-Item--A {
     font-size: 1em;
     padding: 6px;
     padding-left: 10px;
@@ -62,7 +70,8 @@ height: 100%;
     width: 200px;
     height: 30px;
 }
-.header_Box2-Item--B{
+
+.header_Box2-Item--B {
     cursor: pointer;
     padding: 6px;
     font-size: 1.25rem;
@@ -73,4 +82,5 @@ height: 100%;
     background-color: #e58f05;
     color: #eee;
 }
+
 /********************************************************************************/

@@ -22,9 +22,9 @@ const MovieCardComponent = (props) => {
       className={`cardComponent ${viewMode === "grid" ? "column" : "row"}`}
       style={{
         backgroundImage: `url("${apiConfig.urlImages + movie.poster_path}")`,
-        
+
         transform: isHover ? "scale(1.04)" : "scale(1)",
-        
+
       }}
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
@@ -45,10 +45,10 @@ const MovieCardComponent = (props) => {
           style={{
             justifyContent: "space-between",
             borderRadius: "18px 65% 18px 18px",
-            border:"1px solid #000"
+            border: "1px solid #000"
           }}
         > <h2 className='cardComponent_Hover-Title'>{movie.title}</h2>
-        <p className='cardComponent_Hover-Desc'> <span className='cardComponent_Desc-Label' >Sinopsis: </span>{movie.overview}</p>
+          <p className='cardComponent_Hover-Desc'> <span className='cardComponent_Desc-Label' >Sinopsis: </span>{movie.overview}</p>
         </section>
       )}
       {viewMode === "list" && !isHover && (
@@ -57,11 +57,11 @@ const MovieCardComponent = (props) => {
           <div className='cardContainer_List-Box1'>
             <h2 className='cardContainer_List-Title'>{movie.title}</h2>
           </div>
-          
+
           <div className='cardContainer_List-Box2' >
-          <p className='cardContainer_List-Box2--Text'><span className="cardComponent_Desc-Label">Estreno: </span>{movie.release_date}</p>
-           <p  className='cardContainer_List-Box2--Text'> <span className='cardComponent_Desc-Label'> Score:</span> {movie.vote_average} / ({movie.vote_count})</p>
-           <p className="cardComponent_Desc-Label" style={{marginTop:"2%"}}>Sinopsis...</p>
+            <p className='cardContainer_List-Box2--Text'><span className="cardComponent_Desc-Label">Estreno: </span>{movie.release_date}</p>
+            <p className='cardContainer_List-Box2--Text'> <span className='cardComponent_Desc-Label'> Score:</span> {movie.vote_average} / ({movie.vote_count})</p>
+            <p className="cardComponent_Desc-Label" style={{ marginTop: "2%" }}>Sinopsis...</p>
           </div>
         </section>
       )}

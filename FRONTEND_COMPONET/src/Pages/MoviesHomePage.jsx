@@ -16,7 +16,7 @@ const MoviesHomePage = () => {
     onPageChange,
     onViewModeChange
   } = useOutletContext();
-  const [movies, setMovies] = useState([]); 
+  const [movies, setMovies] = useState([]);
   const loadMovies = async () => {
     // Si hay texto de busqueda, usamos search; si no, traemos por categoria
     const aux = searchQuery?.trim()
@@ -24,12 +24,12 @@ const MoviesHomePage = () => {
       : await getAllMovies(category, page);
     setMovies(aux?.results ?? []);// si hay datos guay, sino dame un array vacio 
   }
-/////////////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////////////////
   useEffect(() => {
     // Recargar cuando cambia categoria, pagina o search
-///creo que me voy enterando de las dependencia que oye el useEffect
+    ///creo que me voy enterando de las dependencia que oye el useEffect
 
-//NOTA PARA ALEX: OYE ME TIENE SIEMPRE EL WARNING DEL VSC SIEMPRE MARCADO EL USEEFFECT LE PREGUNTE A LA ia POR UNA SOLUCION Y EL USEEFFECT QUE ME ENSEÑO ERA GRANDISIMO...NO SE YO ENTENDER TODAVIA COMO ARREGLAR ESTO....ME DA TOC DEL BUENO
+    //NOTA PARA ALEX: OYE ME TIENE SIEMPRE EL WARNING DEL VSC SIEMPRE MARCADO EL USEEFFECT LE PREGUNTE A LA ia POR UNA SOLUCION Y EL USEEFFECT QUE ME ENSEÑO ERA GRANDISIMO...NO SE YO ENTENDER TODAVIA COMO ARREGLAR ESTO....ME DA TOC DEL BUENO
     loadMovies();
   }, [category, page, searchQuery])
 

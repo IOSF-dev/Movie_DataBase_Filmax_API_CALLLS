@@ -1,41 +1,47 @@
 /*******************************************************/
-.detailsContainer{
-display: flex;
-padding: 5px;
-background-color: #212529;
-background-size: cover;
-background-position:center;
-background-repeat: no-repeat;
-position: relative;
-background-attachment: fixed ;
-color: #eee;
+.detailsContainer {
+    display: flex;
+    padding: 5px;
+    background-color: #212529;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    background-attachment: fixed;
+    color: #eee;
 }
-.detailsContainer::before{
+
+.detailsContainer::before {
     content: "";
     position: absolute;
     inset: 0;
     background: rgba(0, 0, 0, 0.762);
     z-index: 0;
 }
-.detailsContainer > *{
+
+.detailsContainer>* {
     position: relative;
     z-index: 1;
 }
+
 /**************************************************************/
-.detailsContainer_LeftBox{
+.detailsContainer_LeftBox {
     padding: 10px;
 }
-.detailsContainer_LeftBox-Poster{
+
+.detailsContainer_LeftBox-Poster {
     border-radius: 16px;
     width: 100%;
     height: auto;
     align-self: center;
 }
+
 /****************************************************************/
-.detailsContainer_RigthBox{
+.detailsContainer_RigthBox {
     width: 100%;
 }
-.detailsContainer_RigthBox-UP{
+
+.detailsContainer_RigthBox-UP {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,37 +49,42 @@ color: #eee;
     justify-content: space-around;
     padding-top: 30px;
 }
-.detailsContainer_RigthBox-Title{
-  color: #eee;
-  font-size: 50px;
+
+.detailsContainer_RigthBox-Title {
+    color: #eee;
+    font-size: 50px;
 }
-.detailsContainer_RigthBox-P{
+
+.detailsContainer_RigthBox-P {
     margin: 5px;
     font-size: 25px;
-    
+
 }
-.detailsContainer_SPAN{
-    color:#ffd166;
+
+.detailsContainer_SPAN {
+    color: #ffd166;
     font-size: 25px;
     font-weight: bolder;
 }
 
 /*************************************************************/
-.detailsContainer_RigthBox-DOWN{
+.detailsContainer_RigthBox-DOWN {
     padding-top: 20px;
     font-size: 25px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
 }
-.detailsContainer_Summary{
-margin: 3px;
+
+.detailsContainer_Summary {
+    margin: 3px;
     border-radius: 18px;
     padding: 6px;
     background-color: #e58f05;
 }
-.detailsContainer_actorSection{
+
+.detailsContainer_actorSection {
     border-radius: 16px;
     background-color: #eeeeee34;
     border-top: 2px solid #eee;
@@ -83,17 +94,19 @@ margin: 3px;
     align-items: center;
     gap: 10px;
 }
-.detailsContainer_ActorBox{
-   height: auto;
+
+.detailsContainer_ActorBox {
+    height: auto;
     width: 7rem;
     padding: 4px;
     align-self: flex-start;
 }
-.detailsContainer_ActorImg{
+
+.detailsContainer_ActorImg {
     border-radius: 8px;
     width: 100px;
 }
-.detailsContainer_ActorDetails{
+
+.detailsContainer_ActorDetails {
     text-align: center;
 }
-

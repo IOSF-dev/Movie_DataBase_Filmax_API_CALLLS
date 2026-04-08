@@ -1,20 +1,20 @@
-
 /**************ROOT*****************************************/
 .mainContainer {
-      padding: 1% 5% 1% 5%; 
+      padding: 1% 5% 1% 5%;
       background-color: #212529;
       color: #fefefe;
       gap: 1.2%;
       box-sizing: border-box;
 }
+
 /*************CONDICIONAL-CLASSNAME***********************************/
 .mainContainer.grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       grid-template-rows: auto;
-   
-  row-gap: 24px;
-  column-gap: 24px;}
+      row-gap: 24px;
+      column-gap: 24px;
+}
 
 .mainContainer.list {
       display: flex;
@@ -31,7 +31,8 @@
       .mainContainer.grid {
             grid-template-columns: repeat(2, minmax(0, 1fr));
       }
-      .mainContainer.grid .cardPoster{
+
+      .mainContainer.grid .cardPoster {
             width: 100%;
             max-width: 180px;
       }

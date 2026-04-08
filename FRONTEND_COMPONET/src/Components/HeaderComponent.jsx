@@ -11,7 +11,7 @@ const HeaderComponent = ({ onSearchSubmit }) => {
   const [searchText, setSearchText] = useState("");
   const navigate = useNavigate();
   const goHome = () => { navigate("/") }
-////////////////////////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////////////////////
 
   return (
     <header className='headerComponent'>

@@ -5,15 +5,15 @@ import MoviesHomePage from "./Pages/MoviesHomePage"
 import DetailsPage from "./Pages/DetailsPage"
 
 function App() {
-  
+
 
   return (
     <>
-        <BrowserRouter>
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainLayout />}>
-            <Route path="/" element={<MoviesHomePage />} />  
-            <Route path="/details/:movieId" element={<DetailsPage />} /> 
+            <Route path="/" element={<MoviesHomePage />} />
+            <Route path="/details/:movieId" element={<DetailsPage />} />
           </Route>
         </Routes>
       </BrowserRouter>

@@ -9,11 +9,13 @@
     border: 2px solid black;
 
 }
+
 /********************FIRST-CHILD************************************************************************/
 .navBar_Box1-Empty {
     height: 100%;
     width: 33%;
 }
+
 /*******************SECOND-CHILD*********************************************************************/
 .navBar_Box2 {
     width: 33%;
@@ -22,16 +24,19 @@
     justify-content: center;
     gap: 5%;
 }
-.navBar_Box2-BackBTN{
+
+.navBar_Box2-BackBTN {
 
     background: url(/left_icon.svg);
     background-repeat: no-repeat;
 }
-.navBar_Box2-FrontBTN{
+
+.navBar_Box2-FrontBTN {
     background: url(/rigth_icon.svg);
     background-repeat: no-repeat;
     color: #eee;
 }
+
 .navBar_Box2-BackBTN,
 .navBar_Box2-FrontBTN {
     cursor: pointer;
@@ -42,9 +47,11 @@
     background-size: cover;
     border: none;
 }
+
 .navBar_Box2-Number {
     font-size: 26px;
 }
+
 /********************THIRD-CHILD********************************************************************/
 .navBar_Box3 {
     width: 33%;
@@ -53,12 +60,14 @@
     justify-content: center;
     padding-right: 0px;
 }
-.navBar_Box3-Label{
+
+.navBar_Box3-Label {
     font-size: 14px;
     font-weight: bold;
     padding: 4px;
 }
-.navBar_Box3-Select{
+
+.navBar_Box3-Select {
     cursor: pointer;
     padding: 4px;
     margin-left: 4px;
@@ -67,6 +76,7 @@
     width: 8rem;
     height: 2rem;
 }
+
 /*************************LAST-CHILD********************************************************************/
 .navBar_Box4 {
     height: 100%;
@@ -75,15 +85,18 @@
     align-items: center;
     justify-content: center;
 }
-.navBar_Box4-BTN_GRID{
+
+.navBar_Box4-BTN_GRID {
     background: url(/grid-layout.svg);
     background-position: center;
 }
-.navBar_Box4-BTN_LIST{
+
+.navBar_Box4-BTN_LIST {
     background: url(/list-layout.svg);
 }
+
 .navBar_Box4-BTN_GRID,
-.navBar_Box4-BTN_LIST{
+.navBar_Box4-BTN_LIST {
     font-size: 1em;
     border-radius: 10px;
     margin: 0 5px;
@@ -94,4 +107,5 @@
     border: none;
     cursor: pointer;
 }
+
 /****************************************************************************************************/

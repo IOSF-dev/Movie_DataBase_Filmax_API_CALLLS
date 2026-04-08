@@ -8,7 +8,7 @@ const FooterComponent = () => {
         <div>
           <p>© 2025 MIAO Company, IOSF</p>
         </div>
-        <img title="logo"src="/logo.png" alt="logo" />
+        <img title="logo" src="/logo.png" alt="logo" />
         <div>
           <span> home </span>
           <span> Pricing </span>
