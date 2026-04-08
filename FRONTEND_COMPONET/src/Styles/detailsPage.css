@@ -1,3 +1,4 @@
+/*******************************************************/
 .detailsContainer{
 display: flex;
 padding: 5px;
@@ -20,7 +21,21 @@ color: #eee;
     position: relative;
     z-index: 1;
 }
-.upperBox{
+/**************************************************************/
+.detailsContainer_LeftBox{
+    padding: 10px;
+}
+.detailsContainer_LeftBox-Poster{
+    border-radius: 16px;
+    width: 100%;
+    height: auto;
+    align-self: center;
+}
+/****************************************************************/
+.detailsContainer_RigthBox{
+    width: 100%;
+}
+.detailsContainer_RigthBox-UP{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,33 +43,37 @@ color: #eee;
     justify-content: space-around;
     padding-top: 30px;
 }
-.detailsTitle{
+.detailsContainer_RigthBox-Title{
   color: #eee;
   font-size: 50px;
 }
-.detailsData{
+.detailsContainer_RigthBox-P{
     margin: 5px;
     font-size: 25px;
     
 }
-.detailsDataSPAN{
+.detailsContainer_SPAN{
     color:#ffd166;
     font-size: 25px;
     font-weight: bolder;
 }
-.leftBox{
-    padding: 10px;
+
+/*************************************************************/
+.detailsContainer_RigthBox-DOWN{
+    padding-top: 20px;
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
 }
-.detailsPoster{
-    border-radius: 16px;
-    width: 100%;
-    height: auto;
-    align-self: center;
+.detailsContainer_Summary{
+margin: 3px;
+    border-radius: 18px;
+    padding: 6px;
+    background-color: #e58f05;
 }
-.rigthBox{
-    width: 100%;
-}
-.actorSection{
+.detailsContainer_actorSection{
     border-radius: 16px;
     background-color: #eeeeee34;
     border-top: 2px solid #eee;
@@ -64,30 +83,17 @@ color: #eee;
     align-items: center;
     gap: 10px;
 }
-.actorBox{
+.detailsContainer_ActorBox{
    height: auto;
     width: 7rem;
     padding: 4px;
     align-self: flex-start;
 }
-.actorImg{
+.detailsContainer_ActorImg{
     border-radius: 8px;
     width: 100px;
 }
-.actorDetails{
+.detailsContainer_ActorDetails{
     text-align: center;
 }
-.detailsLowerBox{
-    padding-top: 20px;
-    font-size: 25px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-}
-.detailsSummary{
-margin: 3px;
-    border-radius: 18px;
-    padding: 6px;
-    background-color: #e58f05;
-}
+

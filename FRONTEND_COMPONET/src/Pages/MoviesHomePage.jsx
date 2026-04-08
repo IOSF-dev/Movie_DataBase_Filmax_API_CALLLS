@@ -1,13 +1,13 @@
+/////////////////IMPORT COLLECTION/////////////////////////////
 import React, { useEffect, useState } from 'react'
 import { useOutletContext } from "react-router-dom";
 import { getAllMovies, searchMovies } from '../Services/ApiFetch';
 import MovieCardComponent from "../Components/MovieCardComponent";
 import NavComponent from "../Components/NavComponent";
-
+//////////////////////////////////////////////////////////////////
 const MoviesHomePage = () => {
-
-  // Recibimos datos del layout via Outlet context
-  const {
+  ////////////////////CONST-COLLECTION//////////////////////
+  const {  // Recibimos datos del layout via Outlet context
     category,
     page,
     searchQuery,
@@ -24,7 +24,7 @@ const MoviesHomePage = () => {
       : await getAllMovies(category, page);
     setMovies(aux?.results ?? []);// si hay datos guay, sino dame un array vacio 
   }
-
+/////////////////////////////////////////////////////////////////
   useEffect(() => {
     // Recargar cuando cambia categoria, pagina o search
 ///creo que me voy enterando de las dependencia que oye el useEffect

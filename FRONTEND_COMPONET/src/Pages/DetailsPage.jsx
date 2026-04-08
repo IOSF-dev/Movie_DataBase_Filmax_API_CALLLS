@@ -42,43 +42,41 @@ useEffect(()=>{
           className='detailsContainer'
           style={{ backgroundImage: `url(${apiConfig.urlImages + movie.poster_path})` }}
         >
-          <div className='leftBox'>
-<img className='detailsPoster' src={apiConfig.urlImages+movie.poster_path} alt={movie.title || "Poster"} />
+          <div className='detailsContainer_LeftBox'>
+<img className='detailsContainer_LeftBox-Poster' src={apiConfig.urlImages+movie.poster_path} alt={movie.title || "Poster"} />
           </div>
              
-          <div className='rigthBox'>
-            <div className='upperBox'>
-               <h1 className='detailsTitle'>{movie.title ?? ""}</h1>
+          <div className='detailsContainer_RigthBox'>
+            <div className='detailsContainer_RigthBox-UP'>
+               <h1 className='detailsContainer_RigthBox-Title'>{movie.title ?? ""}</h1>
                <div style={{textAlign:"center"}}>
-               <p className='detailsData'><span className='detailsDataSPAN'>Año:</span> {movie.release_date}</p>
+               <p className='detailsContainer_RigthBox-P'><span className='detailsContainer_SPAN'>Año:</span> {movie.release_date}</p>
                <div style={{display:"flex"}}>
-                <p className='detailsData'><span className='cardDescLabel'>Score: </span>{movie.vote_average}  </p>
-                <p className='detailsData'> / <span className='cardDescLabel'> Votos: </span>({movie.vote_count})</p>
+                <p className='detailsContainer_RigthBox-P'><span className='detailsContainer_SPAN'>Score: </span>{movie.vote_average}  </p>
+                <p className='detailsContainer_RigthBox-P'> / <span className='detailsContainer_SPAN'> Votos: </span>({movie.vote_count})</p>
                </div>
-              <p className='detailsData'><span className='cardDescLabel'>Duracion: </span> {movie.runtime} min</p>
+              <p className='detailsContainer_RigthBox-P'><span className='detailsContainer_SPAN'>Duracion: </span> {movie.runtime} min</p>
                </div>
-              <p className='detailsData' style={{marginTop:"1%", paddingRight:"20%", paddingLeft:"10%", textWrap:"pretty"}}><span className='detailsDataSPAN'>Sinopsis: </span><br /> {movie.overview}</p>
+              <p className='detailsContainer_RigthBox-P' style={{marginTop:"1%", paddingRight:"20%", paddingLeft:"10%", textWrap:"pretty"}}><span className='detailsContainer_SPAN'>Sinopsis: </span><br /> {movie.overview}</p>
             </div>
 
-<details className='detailsLowerBox'>
-  <summary  className='detailsSummary'>Reparto...</summary>
+<details className='detailsContainer_RigthBox-DOWN'>
+  <summary  className='detailsContainer_Summary'>Reparto...</summary>
   
- <section className='actorSection' >
+ <section className='detailsContainer_actorSection' >
                     {movie?.credits?.cast.slice(0,7).map((u,idx) => (
-          <div className="actorBox" key={idx} >
-            <img className="actorImg"src={apiConfig.urlImages+u.profile_path} alt="" />
-                      <div className="actorDetails">
-                        <p className='detailsDataSPAN'>{u.name}</p>
+          <div className="detailsContainer_ActorBox" key={idx} >
+            <img className="detailsContainer_ActorImg"src={apiConfig.urlImages+u.profile_path} alt="" />
+                      <div className="detailsContainer_ActorDetails">
+                        <p className='detailsContainer_SPAN'>{u.name}</p>
                         <p style={{textWrap:"wrap"}}>{u.character}</p>
                       </div>
            
           </div>
         ))}
       </section>
-</details>
-            
+</details>    
           </div>
-          
         </section>
      
       
