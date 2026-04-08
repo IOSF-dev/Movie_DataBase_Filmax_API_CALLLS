@@ -51,13 +51,19 @@ useEffect(()=>{
                <h1 className='detailsTitle'>{movie.title ?? ""}</h1>
                <div style={{textAlign:"center"}}>
                <p className='detailsData'><span className='detailsDataSPAN'>Año:</span> {movie.release_date}</p>
-               <span className='detailsData'>Score: {movie.vote_average} -<span className='detailsData'> Votos: {movie.vote_count}</span></span>
+               <div style={{display:"flex"}}>
+                <p className='detailsData'><span className='cardDescLabel'>Score: </span>{movie.vote_average}  </p>
+                <p className='detailsData'> / <span className='cardDescLabel'> Votos: </span>({movie.vote_count})</p>
                </div>
-              <p className='detailsData'><span className='detailsDataSPAN'>Descripcion:</span><br /> {movie.overview}</p>
+              <p className='detailsData'><span className='cardDescLabel'>Duracion: </span> {movie.runtime} min</p>
+               </div>
+              <p className='detailsData' style={{marginTop:"1%", paddingRight:"20%", paddingLeft:"10%", textWrap:"pretty"}}><span className='detailsDataSPAN'>Sinopsis: </span><br /> {movie.overview}</p>
             </div>
 
-
-             <section className='actorSection' >
+<details className='detailsLowerBox'>
+  <summary  className='detailsSummary'>Reparto...</summary>
+  
+ <section className='actorSection' >
                     {movie?.credits?.cast.slice(0,7).map((u,idx) => (
           <div className="actorBox" key={idx} >
             <img className="actorImg"src={apiConfig.urlImages+u.profile_path} alt="" />
@@ -69,6 +75,8 @@ useEffect(()=>{
           </div>
         ))}
       </section>
+</details>
+            
           </div>
           
         </section>

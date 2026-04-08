@@ -1,11 +1,12 @@
 .detailsContainer{
 display: flex;
-padding: 20px;
+padding: 5px;
 background-color: #212529;
 background-size: cover;
-background-position: center;
+background-position:center;
 background-repeat: no-repeat;
 position: relative;
+background-attachment: fixed ;
 color: #eee;
 }
 .detailsContainer::before{
@@ -25,14 +26,16 @@ color: #eee;
     align-items: center;
     height: auto;
     justify-content: space-around;
-    padding-top: 50px;
+    padding-top: 30px;
 }
 .detailsTitle{
   color: #eee;
-  font-size: 80px;
+  font-size: 50px;
 }
 .detailsData{
+    margin: 5px;
     font-size: 25px;
+    
 }
 .detailsDataSPAN{
     color:#ffd166;
@@ -40,11 +43,11 @@ color: #eee;
     font-weight: bolder;
 }
 .leftBox{
-    padding: 20px;
+    padding: 10px;
 }
 .detailsPoster{
     border-radius: 16px;
-    width: 500px;
+    width: 100%;
     height: auto;
     align-self: center;
 }
@@ -52,16 +55,20 @@ color: #eee;
     width: 100%;
 }
 .actorSection{
+    border-radius: 16px;
+    background-color: #eeeeee34;
     border-top: 2px solid #eee;
     padding: 10px;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    gap: 10px;
 }
 .actorBox{
-   
-    width: 100px;
+   height: auto;
+    width: 7rem;
     padding: 4px;
+    align-self: flex-start;
 }
 .actorImg{
     border-radius: 8px;
@@ -69,4 +76,18 @@ color: #eee;
 }
 .actorDetails{
     text-align: center;
+}
+.detailsLowerBox{
+    padding-top: 20px;
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.detailsSummary{
+margin: 3px;
+    border-radius: 18px;
+    padding: 6px;
+    background-color: #e58f05;
 }
