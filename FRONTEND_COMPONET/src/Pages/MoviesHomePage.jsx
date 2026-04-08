@@ -30,6 +30,7 @@ const MoviesHomePage = () => {
    
     useEffect(() => { 
     // Recargar cuando cambia categoria, pagina o search
+    
     loadMovies(); 
   }, [category, page, searchQuery])
 
@@ -62,7 +63,7 @@ const MoviesHomePage = () => {
         
         {/* SELECT: categoria actual + cambio de categoria */}
         <div className="navBar_box3">
-         <label className='label_select'> Ordenar por: <select
+         <span className='label_select'> Mostrar por:</span><select
             name="category"
             id="category"
             className="INP_SLC"
@@ -74,7 +75,7 @@ const MoviesHomePage = () => {
             <option value="now_playing">En Cartelera</option>
             <option value="top_rated">Mejor Valoradas</option>
           </select>
-          </label>
+          
              <div className='subBox'>  
         <span className='label_select'>Modo de vista: </span>  
           <button className="BTN_GRID" onClick={() => onViewModeChange ("grid")}></button>
