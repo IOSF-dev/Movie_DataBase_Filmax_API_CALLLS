@@ -45,7 +45,7 @@ const MoviesHomePage = () => {
         onViewModeChange={onViewModeChange}
       />
 
-      <div className={`mainContainer ${viewMode === "grid" ? "grid" : "list"}`}>
+      <main className={`mainContainer ${viewMode === "grid" ? "grid" : "list"}`}>
         {!movies || movies.length === 0 ? (
           <div>
             <h3>Cargando movies...</h3>
@@ -57,7 +57,7 @@ const MoviesHomePage = () => {
         )
 
         }
-      </div>
+      </main>
     </>
   )
 }

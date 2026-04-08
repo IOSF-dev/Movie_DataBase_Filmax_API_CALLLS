@@ -17,7 +17,7 @@ const MovieCardComponent = (props) => {
   return (
 
 
-    <div
+    <section
       title={movie.title}
       className={`cardComponent ${viewMode === "grid" ? "column" : "row"}`}
       style={{
@@ -31,17 +31,17 @@ const MovieCardComponent = (props) => {
       onClick={goToDetails}>
 
       {viewMode === "grid" && isHover && (
-        <div className='cardComponent_Hover' >
+        <section className='cardComponent_Hover' >
           <h2 className='cardComponent_Hover-Title' >{movie.title}</h2>
           <p className='cardComponent_Hover-Desc'> <span className='cardComponent_Desc-Label'>Sinopsis: </span>{movie.overview}</p>
-        </div>
+        </section>
       )}
 
       {viewMode === "grid" && !isHover && (
         <p className='cardComponent_Score'> <span className='cardComponent_Desc-Label'> Score:</span> {movie.vote_average} / ({movie.vote_count})</p>
       )}
       {viewMode === "list" && isHover && (
-        <div className='cardComponent_Hover'
+        <section className='cardComponent_Hover'
           style={{
             justifyContent: "space-between",
             borderRadius: "18px 65% 18px 18px",
@@ -49,11 +49,11 @@ const MovieCardComponent = (props) => {
           }}
         > <h2 className='cardComponent_Hover-Title'>{movie.title}</h2>
         <p className='cardComponent_Hover-Desc'> <span className='cardComponent_Desc-Label' >Sinopsis: </span>{movie.overview}</p>
-        </div>
+        </section>
       )}
       {viewMode === "list" && !isHover && (
 
-        <div className='cardContainer_List'>
+        <section className='cardContainer_List'>
           <div className='cardContainer_List-Box1'>
             <h2 className='cardContainer_List-Title'>{movie.title}</h2>
           </div>
@@ -63,9 +63,9 @@ const MovieCardComponent = (props) => {
            <p  className='cardContainer_List-Box2--Text'> <span className='cardComponent_Desc-Label'> Score:</span> {movie.vote_average} / ({movie.vote_count})</p>
            <p className="cardComponent_Desc-Label" style={{marginTop:"2%"}}>Sinopsis...</p>
           </div>
-        </div>
+        </section>
       )}
-    </div>
+    </section>
   )
 }
 export default MovieCardComponent

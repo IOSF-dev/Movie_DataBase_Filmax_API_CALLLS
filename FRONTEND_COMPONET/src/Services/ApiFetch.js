@@ -1,15 +1,9 @@
 import { apiConfig } from './ApiConfig.js';
 
-
-
-
-//------------------------------------
-//          FETCH-----general---------
 //-------------------------------//-------
-
+////////////////////////////////////////////////////////////////
 // Trae peliculas por categoria + pagina
 export const getAllMovies = async (category = "top_rated", page = 1)=>{
-
     try {
     const response = await fetch(
             `${apiConfig.baseURL}${category}?api_key=${apiConfig.ApiKey}&language=es-ES&page=${page}`);
@@ -17,13 +11,12 @@ export const getAllMovies = async (category = "top_rated", page = 1)=>{
         throw new Error("error al hacer el fetch")
     }
     const dataResponse = await response.json();
-    return dataResponse;
-    
-    } catch (error) {
-        console.log("Error", error.message);
-    }
-    }
+    return dataResponse;} 
 
+    catch (error) {
+        console.log("Error", error.message);
+    }}
+///////////////////////////////////////////////////////////////////
 export const getMovieById = async (movieId) => {
     try {
          const response = await fetch(
@@ -35,11 +28,8 @@ export const getMovieById = async (movieId) => {
     return dataResponse;
     } catch (error)  {
         console.log(error.message)
-        
-    }
-}
-
-
+    }}
+////////////////////////////////////////////////////////////////
 // Busca peliculas por nombre (parcial) + pagina
 export const searchMovies = async (query, page = 1) => {
     try {
@@ -57,29 +47,4 @@ export const searchMovies = async (query, page = 1) => {
     
     } catch (error) {
         console.log("Error", error.message);
-    }
-    }
-
-
-
-
-
-/*
-/////////////////////////////////////////////////////////////////////////////////////////////////
-//------------------------------------------------------------------------------------
-///            fetch id
-//-----------------------------------------------------------------------------------
-export async function getID(movieid){
-try {
-    const res = await fetch (`${apiConfig.baseURL}${movieid}?api_key=${apiConfig.ApiKey}&language=es-ES&page=1&append_to_response=credits`);
-
-    if(!res.ok){ throw new Error (res.status);}
-    const dataID = await res.json();
-            
-        return dataID
-} catch (error) {console.log(error.message);
-    
-}
-};
-
-*/
+    }}

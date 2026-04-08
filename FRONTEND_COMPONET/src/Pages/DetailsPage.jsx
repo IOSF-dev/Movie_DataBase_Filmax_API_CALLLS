@@ -38,16 +38,16 @@ useEffect(()=>{
         </div>
       ) : (
         <>
-        <section
+        <main
           className='detailsContainer'
           style={{ backgroundImage: `url(${apiConfig.urlImages + movie.poster_path})` }}
         >
-          <div className='detailsContainer_LeftBox'>
+          <aside className='detailsContainer_LeftBox'>
 <img className='detailsContainer_LeftBox-Poster' src={apiConfig.urlImages+movie.poster_path} alt={movie.title || "Poster"} />
-          </div>
+          </aside>
              
-          <div className='detailsContainer_RigthBox'>
-            <div className='detailsContainer_RigthBox-UP'>
+          <section className='detailsContainer_RigthBox'>
+            <aside className='detailsContainer_RigthBox-UP'>
                <h1 className='detailsContainer_RigthBox-Title'>{movie.title ?? ""}</h1>
                <div style={{textAlign:"center"}}>
                <p className='detailsContainer_RigthBox-P'><span className='detailsContainer_SPAN'>Año:</span> {movie.release_date}</p>
@@ -58,7 +58,7 @@ useEffect(()=>{
               <p className='detailsContainer_RigthBox-P'><span className='detailsContainer_SPAN'>Duracion: </span> {movie.runtime} min</p>
                </div>
               <p className='detailsContainer_RigthBox-P' style={{marginTop:"1%", paddingRight:"20%", paddingLeft:"10%", textWrap:"pretty"}}><span className='detailsContainer_SPAN'>Sinopsis: </span><br /> {movie.overview}</p>
-            </div>
+            </aside>
 
 <details className='detailsContainer_RigthBox-DOWN'>
   <summary  className='detailsContainer_Summary'>Reparto...</summary>
@@ -76,8 +76,8 @@ useEffect(()=>{
         ))}
       </section>
 </details>    
-          </div>
-        </section>
+          </section>
+        </main>
      
       
               

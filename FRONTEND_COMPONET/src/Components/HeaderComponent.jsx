@@ -15,7 +15,7 @@ const HeaderComponent = ({ onSearchSubmit }) => {
 
   return (
     <header className='headerComponent'>
-      <nav className='header_Nav'>
+      <aside className='header_Nav'>
         <div className="header_Logo-Box">
           <img title="Logo Filmax" src="/logo2.svg" alt="Comercial Logo of Filmax Company" className='header_Logo' onClick={goHome} />
         </div>
@@ -49,7 +49,7 @@ const HeaderComponent = ({ onSearchSubmit }) => {
         </div>
 
 
-      </nav>
+      </aside>
 
 
 
