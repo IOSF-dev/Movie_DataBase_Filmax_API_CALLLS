@@ -49,8 +49,8 @@ const MovieCardComponent = (props) => {
       {viewMode === "grid" && !isHover && (
         <p className='scoreCard'> <span className='cardDescLabel'> Score:</span> {movie.vote_average} / ({movie.vote_count})</p>
       )}
-  {viewMode === "list" && isHover && (
-     <div className='cardHover'
+      {viewMode === "list" && isHover && (
+        <div className='cardHover'
           style={{
             position: "absolute",
             inset: 0,
@@ -59,24 +59,30 @@ const MovieCardComponent = (props) => {
             padding: "20px",
             display: "flex",
             flexDirection: "column",
-            justifyContent: "space-between",
-            borderRadius: "16px",
+            justifyContent: "end",
+            borderRadius: "18px 65% 18px 18px",
+            border:"1px solid #000"
           }}
-        > <p style={{ margin: 0 }}> <span className='cardDescLabel'>Sinopsis: </span>{movie.overview}</p>
-</div>
-  )}
-{viewMode === "list" && !isHover &&(
-  <div>
-<h2 style={{ margin: 0, fontSize: "28px" }}>{movie.title}</h2>
- <p className="cardText">
-              <span className="cardDescLabel">Estreno: </span>
-              {movie.release_date}
-            </p>
-<p className='scoreCard'> <span className='cardDescLabel'> Score:</span> {movie.vote_average} / ({movie.vote_count})</p>
-         
+        > <h2 style={{textAlign:"center",fontSize: "35px",color:"#ffd166" }}>{movie.title}</h2>
+        <p style={{ margin: 0 }}> <span className='cardDescLabel'>Sinopsis: </span>{movie.overview}</p>
+        </div>
+      )}
+      {viewMode === "list" && !isHover && (
 
-  </div>
-   )}
+        <div className='container_list'>
+          <div className='subList_1'>
+            <h2 style={{ marginLeft: "50px", fontSize: "35px",color:"#eee" }}>{movie.title}</h2>
+          </div>
+          
+          <div className='subList_2' >
+          <p className='textCard'><span className="cardDescLabel">Estreno: </span>{movie.release_date}</p>
+           <p  className='textCard'> <span className='cardDescLabel'> Score:</span> {movie.vote_average} / ({movie.vote_count})</p>
+           <p className="cardDescLabel" style={{marginTop:"2%"}}>Sinopis...</p>
+          </div>
+
+
+        </div>
+      )}
 
 
     </div>
@@ -88,3 +94,9 @@ const MovieCardComponent = (props) => {
 export default MovieCardComponent
 
 
+/*  <p >
+              <span className="cardDescLabel">Estreno: </span>
+              {movie.release_date}
+            </p>
+            <p> <span className='cardDescLabel'> Score:</span> {movie.vote_average} / ({movie.vote_count})</p>
+            <p className="cardDescLabel">Sinopis...</p>*/
