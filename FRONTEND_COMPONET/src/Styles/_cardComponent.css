@@ -3,7 +3,7 @@
     background-color:#eeeeee6c;
      padding:10px;
      color:#eee;
-     height:auto;
+    /*height:auto;*/
      border-radius:16px;
      display: flex;
      flex-direction: column;
@@ -86,7 +86,7 @@
 }
 
 .cardDescLabel{
-   font-weight: 800;
+   font-weight: 600;
    color: #ffd166;
-   letter-spacing: 0.02em;
+ 
 }
