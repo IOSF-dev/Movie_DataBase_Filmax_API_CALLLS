@@ -82,7 +82,7 @@ FRONTEND_COMPONET/
 2. Acceder a la carpeta del frontend:
 
 ```bash
-cd Movie_DataBase_Filmax_API_CALLLS/FRONTEND_COMPONET
+cd Movie_DataBase_Filmax_API_CALLLS
 ```
 
 3. Instalar las dependencias:
