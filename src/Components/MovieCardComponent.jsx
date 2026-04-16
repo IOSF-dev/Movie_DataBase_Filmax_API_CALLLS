@@ -34,7 +34,7 @@ const MovieCardComponent = (props) => {
    const movieGenres = movie.genre_ids
   ?.map((id) => genreMap[id])
   .filter(Boolean)
-  .slice(0, 2) ?? []; // Codex añadió el mapeo.
+  .slice(0, 2) ?? []; // Codex añadió el mapeo. para traducir los generos, se que son datos mokeados y que tiene mala escalabilidad pero la API no va a escalar, ni este proyecto mucho mas alla de lo que ya tiene
   const goToDetails = () => { // Función que realiza la navegación a details con el parámetro de ID.
     navigate(`/details/${movie.id}`)
   }
@@ -54,17 +54,18 @@ const MovieCardComponent = (props) => {
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
       onClick={goToDetails}>
-
+        {/**CARD---->PARA EL GRID EN HOVER */}
       {viewMode === "grid" && isHover && (
         <section className='cardComponent_Hover' >
           <h2 className='cardComponent_Hover-Title' >{movie.title}</h2>
           <p className='cardComponent_Hover-Desc'> <span className='cardComponent_Desc-Label'>Sinopsis: </span>{movie.overview}</p>
         </section>
       )}
-
+      {/**CARD---->PARA EL GRID SIN HOVER */}
       {viewMode === "grid" && !isHover && (
         <p className='cardComponent_Score'> <span className='cardComponent_Desc-Label'> Score:</span> {movie.vote_average} / ({movie.vote_count})</p>
       )}
+      {/**CARD---->PARA EL LIST EN HOVER */}
       {viewMode === "list" && isHover && (
         <section className='cardComponent_Hover'
           style={{
@@ -76,6 +77,7 @@ const MovieCardComponent = (props) => {
           <p className='cardComponent_Hover-Desc'> <span className='cardComponent_Desc-Label' >Sinopsis: </span>{movie.overview}</p>
         </section>
       )}
+      {/**CARD---->PARA EL GRID SIN HOVER */}
       {viewMode === "list" && !isHover && (
 
         <section className='cardContainer_List'>
