@@ -196,3 +196,19 @@ Este proyecto tiene un enfoque academico y practico orientado a consolidar conce
 - Navegacion entre vistas
 - Diseno responsive
 - Organizacion de frontend moderna con Vite
+
+
+
+### Nota personal
+
+Uso de IA
+
+en este proyecto se  a usado IA en las siguientes operativas
+-debugeo general de la App
+-resolucion de dudas y consultas tecnicas
+-aporte de ideas y consejos de buenas practicas
+-rapidas implementaciones de responsive
+-vibe coding en css para realizar grandes modificaciones
+- y aprendizaje personal de hooks que a dia de desarrollo de esta app aun no se dominar
+
+siendo personalmente revisadas todas ellas
