@@ -1,0 +1,235 @@
+/********************************************************/
+.cardComponent {
+   cursor: pointer;
+   background-color: #eeeeee6c;
+   padding: 5px;
+   color: #eee;
+   height: 28rem;
+   border-radius: 16px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   
+   text-align: center;
+   text-wrap: pretty;
+   box-sizing: border-box;
+   position: relative;
+   transition: transform 200ms ease;
+}
+
+.cardComponent.column {
+   background-position: center;
+   background-size: cover;
+   flex-direction: column;
+}
+
+
+.cardComponent.row {
+   width: min(94%, 1120px); /* MODIFICADO POR MI */
+   align-self: center;
+   flex-direction: row;
+   background-repeat: no-repeat;
+   background-size: 190px auto; /* MODIFICADO POR MI */
+   background-position: left center; /* MODIFICADO POR MI */
+    /* MODIFICADO POR MI */
+   max-height: 11.5rem; /* MODIFICADO POR MI */
+   border-radius: 26px; /* MODIFICADO POR MI */
+   gap: 0px;
+   padding: 0; /* MODIFICADO POR MI */
+   overflow: hidden; /* AÑADIDO POR MI */
+   position: relative; /* AÑADIDO POR MI */
+   isolation: isolate; /* AÑADIDO POR MI */
+   background-color: #081018; /* AÑADIDO POR MI */
+   border: 1px solid rgba(255, 209, 102, 0.24); /* AÑADIDO POR MI */
+   box-shadow:
+      0 22px 40px rgba(0, 0, 0, 0.34), /* AÑADIDO POR MI */
+      0 0 0 1px rgba(255, 255, 255, 0.03) inset; /* AÑADIDO POR MI */
+}
+.cardComponent.row::before {
+   content: "";
+   position: absolute;
+   inset: 0;
+   background:
+      linear-gradient(
+         90deg,
+         rgba(8, 16, 24, 0.08) 0%,
+         rgba(8, 16, 24, 0.12) 18%,
+         rgba(8, 16, 24, 0.68) 34%,
+         rgba(8, 16, 24, 0.92) 52%,
+         rgba(8, 16, 24, 0.98) 100%
+      );
+   z-index: 0;
+   pointer-events: none;
+}
+.cardComponent.row::after {
+   content: "";
+   position: absolute;
+   inset: 0;
+   background:
+      radial-gradient(circle at top right, rgba(255, 209, 102, 0.16), transparent 28%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 42%);
+   z-index: 0;
+   pointer-events: none;
+}
+.cardComponent.row:hover {
+   box-shadow:
+      0 28px 48px rgba(0, 0, 0, 0.42),
+      0 0 0 1px rgba(255, 209, 102, 0.12) inset;
+}
+.cardComponent.row:hover .cardContainer_List-Title {
+   color: #ffd166;
+}
+/**************HOVER********************************************/
+.cardComponent_Hover {
+   inset: 0;
+   border-radius: 16px;
+   position: absolute;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   padding: 20px;
+   color: #eee;
+   background: #000000a4;
+}
+
+.cardComponent_Hover-Title {
+   margin: 0;
+   font-size: 30px;
+   color: #ffd166;
+}
+
+.cardComponent_Hover-Desc {
+   margin: 0;
+
+}
+
+.cardComponent_Desc-Label {
+   font-weight: 700; /* AÑADIDO POR MI */
+   color: #ffd166;
+   margin: 0;
+}
+
+
+/*******************************************************/
+.cardComponent_Score {
+   margin-bottom: 5px;
+   align-self: center;
+   background-color: #00000089;
+   border-radius: 10px;
+}
+
+
+/**********??????????????????****************************************/
+.cardComponent p {
+   font-size: clamp(1rem, 0.6vw + 0.9rem, 1.6rem);
+}
+
+.cardComponent p:last-of-type {
+   display: -webkit-box;
+   -webkit-line-clamp: 4;
+   -webkit-box-orient: vertical;
+   overflow: hidden;
+}
+
+/*****?????????????????????**************************************/
+
+/***********************************************************/
+.cardContainer_List {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly; /* AÑADIDO POR MI */
+   width: 100%;
+   height: 100%;
+   padding: 20px 24px 20px 220px; /* MODIFICADO POR MI */
+   position: relative; /* AÑADIDO POR MI */
+   z-index: 1; /* AÑADIDO POR MI */
+   box-sizing: border-box; /* AÑADIDO POR MI */
+}
+
+.cardContainer_List-Box1 {
+   display: flex;
+   height: auto; /* MODIFICADO POR MI */
+   text-align: left; /* MODIFICADO POR MI */
+   align-items: flex-start; /* MODIFICADO POR MI */
+   justify-content: flex-start; /* MODIFICADO POR MI */
+}
+
+.cardContainer_List-Title {
+   margin-left: 0; /* MODIFICADO POR MI */
+   margin: 0; /* AÑADIDO POR MI */
+   font-size: clamp(1.45rem, 1vw + 1.15rem, 2.1rem); /* MODIFICADO POR MI */
+   color: #f8fbff; /* MODIFICADO POR MI */
+   line-height: 1.05; /* AÑADIDO POR MI */
+   letter-spacing: 0.02em; /* AÑADIDO POR MI */
+   max-width: 78%; /* AÑADIDO POR MI */
+   text-shadow: 0 6px 18px rgba(0, 0, 0, 0.28); /* AÑADIDO POR MI */
+}
+.cardContainer_List-GenresBox {
+   display: inline-flex;
+   align-items: center;
+   gap: 8px;
+   width: fit-content;
+   margin-top: 12px;
+   padding: 8px 14px;
+   border-radius: 999px;
+   background: linear-gradient(135deg, rgba(255, 209, 102, 0.18), rgba(255, 209, 102, 0.08));
+   border: 1px solid rgba(255, 209, 102, 0.32);
+   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+   backdrop-filter: blur(8px);
+}
+.cardContainer_List-GenresText {
+   color: #fff2cc;
+   font-size: 0.96rem;
+   font-weight: 500;
+}
+
+.cardContainer_List-Box2 {
+   height: auto;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   margin-right: 0;
+   gap: 5px;
+   padding-top: 5px;
+   border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.cardContainer_List-Box2--Text {
+   margin: 0;
+   color: #dbe7f3;
+   font-size: 0.98rem;
+   line-height: 1.35;
+}
+
+
+
+
+@media (max-width: 940px) {
+   .cardComponent.row {
+      width: 96%; /* MODIFICADO POR MI */
+      background-size: 140px auto; /* MODIFICADO POR MI */
+      background-position: left center; /* AÑADIDO POR MI */
+      min-height: 11rem; /* MODIFICADO POR MI */
+      border-radius: 22px; /* MODIFICADO POR MI */
+      padding: 0; /* MODIFICADO POR MI */
+      max-height: 16.5rem;
+   }
+
+   .cardContainer_List {
+      padding: 1px 16px 1px 160px;
+      justify-content: space-evenly; /* MODIFICADO POR MI */
+   }
+
+   .cardContainer_List-Title {
+      max-width: 100%; /* AÑADIDO POR MI */
+      font-size: clamp(1.0rem, 1vw + 0.95rem, 1.6rem); /* MODIFICADO POR MI */
+   }
+
+   .cardContainer_List-GenresBox {
+      margin-top: 1px; /* AÑADIDO POR MI */
+      padding: 2px 5px; /* AÑADIDO POR MI */
+   }
+
+   .cardContainer_List-Box2--Text {
+      font-size: 0.8rem; /* AÑADIDO POR MI */
+   }
+}
