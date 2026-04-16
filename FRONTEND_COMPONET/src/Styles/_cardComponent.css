@@ -137,7 +137,7 @@
 .cardContainer_List {
    display: flex;
    flex-direction: column;
-   justify-content: space-between; /* AÑADIDO POR MI */
+   justify-content: space-evenly; /* AÑADIDO POR MI */
    width: 100%;
    height: 100%;
    padding: 20px 24px 20px 220px; /* MODIFICADO POR MI */
@@ -215,7 +215,8 @@
    }
 
    .cardContainer_List {
-      padding: 1px 16px 1px 160px; /* MODIFICADO POR MI */
+      padding: 1px 16px 1px 160px;
+      justify-content: space-evenly; /* MODIFICADO POR MI */
    }
 
    .cardContainer_List-Title {

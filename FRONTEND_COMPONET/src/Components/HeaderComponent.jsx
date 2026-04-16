@@ -17,13 +17,13 @@ const HeaderComponent = ({ onSearchSubmit }) => {
     <header className='headerComponent'>
       <aside className='header_Nav'>
         <div className="header_Logo-Box">
-          <img title="Logo Filmax" src="/logo2.svg" alt="Comercial Logo of Filmax Company" className='header_Logo' onClick={goHome} />
+          <img title="Logo Filmax" src="/logo2.svg" alt="Logotipo comercial de Filmax" className='header_Logo' onClick={goHome} />
         </div>
         <div className="header_Nav-Box1">
           <p className="header_Box1-Item--A" onClick={goHome} >HOME </p>
           <p className="header_Box1-Item--B" style={{ cursor: "pointer" }}>FEATURES</p>
           <p className="header_Box1-Item--B" style={{ cursor: "pointer" }}>PRICING</p>
-          <p className="header_Box1-Item--B" style={{ cursor: "pointer" }}>FAQS</p>
+          <p className="header_Box1-Item--B" style={{ cursor: "pointer" }}>FAQs</p>
           <p className="header_Box1-Item--A" onClick={goHome} >ABOUT US</p>
         </div>
 
@@ -34,11 +34,11 @@ const HeaderComponent = ({ onSearchSubmit }) => {
           <input
             type="text"
             className="header_Box2-Item--A"
-            placeholder=" Titulo de Pelicula...."
+            placeholder="Título de película..."
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />
-          {/* SEARCH: enviamos el texto al padre para disparar la busqueda */}
+          {/* SEARCH: enviamos el texto al padre para disparar la búsqueda */}
           <button
             className="header_Box2-Item--B"
             onClick={() => onSearchSubmit(searchText)}

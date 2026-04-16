@@ -9,9 +9,8 @@ import { apiConfig } from '../Services/ApiConfig';
 
 const DetailsPage = () => {
 
-  const params = useParams();//Llamamos al hoock useParams
-  ///llamamos al hoock useNavigate
-  const id = params.movieId; ///rescatamos el parametro id de la URL
+  const params = useParams(); // Llamamos al hook useParams.
+  const id = params.movieId; // Rescatamos el parámetro id de la URL.
   const [movie, setMovie] = useState({});
 
 
@@ -34,7 +33,7 @@ const DetailsPage = () => {
 
       {!movie?.credits ? (
         <div>
-          <h3>Cargando los detalles de la Pelicula</h3>
+          <h3>Cargando los detalles de la película</h3>
         </div>
       ) : (
         <>
@@ -55,7 +54,7 @@ const DetailsPage = () => {
                     <p className='detailsContainer_RigthBox-P'><span className='detailsContainer_SPAN'>Score: </span>{movie.vote_average}  </p>
                     <p className='detailsContainer_RigthBox-P'> / <span className='detailsContainer_SPAN'> Votos: </span>({movie.vote_count})</p>
                   </div>
-                  <p className='detailsContainer_RigthBox-P'><span className='detailsContainer_SPAN'>Duracion: </span> {movie.runtime} min</p>
+                  <p className='detailsContainer_RigthBox-P'><span className='detailsContainer_SPAN'>Duración: </span> {movie.runtime} min</p>
                 </div>
                 <p className='detailsContainer_RigthBox-P' style={{ marginTop: "1%", paddingRight: "20%", paddingLeft: "10%", textWrap: "pretty" }}><span className='detailsContainer_SPAN'>Sinopsis: </span><br /> {movie.overview}</p>
               </aside>

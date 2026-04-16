@@ -7,7 +7,7 @@ import NavComponent from "../Components/NavComponent";
 //////////////////////////////////////////////////////////////////
 const MoviesHomePage = () => {
   ////////////////////CONST-COLLECTION//////////////////////
-  const {  // Recibimos datos del layout via Outlet context
+  const {  // Recibimos datos del layout vía Outlet context
     category,
     page,
     searchQuery,
@@ -18,18 +18,18 @@ const MoviesHomePage = () => {
   } = useOutletContext();
   const [movies, setMovies] = useState([]);
   const loadMovies = async () => {
-    // Si hay texto de busqueda, usamos search; si no, traemos por categoria
+    // Si hay texto de búsqueda, usamos search; si no, traemos por categoría.
     const aux = searchQuery?.trim()
-      ? await searchMovies(searchQuery, page) //si hay texto llama a searchMovies, sino al getAllMovies (con categoria)
+      ? await searchMovies(searchQuery, page) // Si hay texto, llama a searchMovies; si no, a getAllMovies (con categoría).
       : await getAllMovies(category, page);
-    setMovies(aux?.results ?? []);// si hay datos guay, sino dame un array vacio 
+    setMovies(aux?.results ?? []); // Si hay datos, genial; si no, devuelve un array vacío.
   }
   /////////////////////////////////////////////////////////////////
   useEffect(() => {
-    // Recargar cuando cambia categoria, pagina o search
-    ///creo que me voy enterando de las dependencia que oye el useEffect
+    // Recargar cuando cambian categoría, página o búsqueda.
+    // Creo que me voy enterando de las dependencias que escucha el useEffect.
 
-    //NOTA PARA ALEX: OYE ME TIENE SIEMPRE EL WARNING DEL VSC SIEMPRE MARCADO EL USEEFFECT LE PREGUNTE A LA ia POR UNA SOLUCION Y EL USEEFFECT QUE ME ENSEÑO ERA GRANDISIMO...NO SE YO ENTENDER TODAVIA COMO ARREGLAR ESTO....ME DA TOC DEL BUENO
+    // NOTA PARA ALEX: VSC me marca siempre un warning con useEffect. Le pregunté a la IA por una solución y el ejemplo que me enseñó era enorme. Aún no termino de entender cómo arreglarlo.
     loadMovies();
   }, [category, page, searchQuery])
 
@@ -48,7 +48,7 @@ const MoviesHomePage = () => {
       <main className={`mainContainer ${viewMode === "grid" ? "grid" : "list"}`}>
         {!movies || movies.length === 0 ? (
           <div>
-            <h3>Cargando movies...</h3>
+            <h3>Cargando películas...</h3>
           </div>
         ) : (
           movies.map((u) => (

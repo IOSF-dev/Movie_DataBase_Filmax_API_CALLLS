@@ -2,7 +2,7 @@ import { apiConfig } from './ApiConfig.js';
 
 //-------------------------------//-------
 ////////////////////////////////////////////////////////////////
-// Trae peliculas por categoria + pagina
+// Trae películas por categoría + página.
 export const getAllMovies = async (category = "top_rated", page = 1) => {
     try {
         const response = await fetch(
@@ -33,7 +33,7 @@ export const getMovieById = async (movieId) => {
     }
 }
 ////////////////////////////////////////////////////////////////
-// Busca peliculas por nombre (parcial) + pagina
+// Busca películas por nombre (parcial) + página.
 export const searchMovies = async (query, page = 1) => {
     try {
         const safeQuery = query?.trim();

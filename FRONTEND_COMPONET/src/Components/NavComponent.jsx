@@ -14,7 +14,7 @@ const NavComponent = ({
         {/* AÑADIDO POR MI: columna fantasma para equilibrar el centro */}
         <div className="navBar_Box1-Empty" aria-hidden="true"></div>
 
-        {/* PAGINAS: control simple de paginado */}
+        {/* PÁGINAS: control simple de paginado */}
         <div className="navBar_Box2">
           <button
             className="navBar_Box2-BackBTN"
@@ -34,7 +34,7 @@ const NavComponent = ({
           </button>
         </div>
 
-        {/* SELECT: categoria actual + cambio de categoria */}
+        {/* SELECT: categoría actual + cambio de categoría */}
         <div className="navBar_Box3">
           {/* AÑADIDO POR MI: grupo independiente para filtrar mejor el espacio */}
           <div className="navBar_Box3-FilterGroup">
@@ -47,9 +47,9 @@ const NavComponent = ({
               onChange={(e) => onCategoryChange(e.target.value)}
             >
               <option value="popular">Populares</option>
-              <option value="upcoming">Proximamente</option>
+              <option value="upcoming">Próximamente</option>
               <option value="now_playing">En Cartelera</option>
-              <option value="top_rated">Mejor Valoradas</option>
+              <option value="top_rated">Mejor valoradas</option>
             </select>
           </div>
 

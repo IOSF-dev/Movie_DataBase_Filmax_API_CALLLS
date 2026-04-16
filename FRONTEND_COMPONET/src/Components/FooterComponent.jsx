@@ -10,10 +10,10 @@ const FooterComponent = () => {
         </div>
         <img title="logo" src="/logo.png" alt="logo" />
         <div>
-          <span> home </span>
+          <span> Home </span>
           <span> Pricing </span>
           <span> Features </span>
-          <span> FAQS </span>
+          <span> FAQs </span>
           <span> About </span>
         </div>
 

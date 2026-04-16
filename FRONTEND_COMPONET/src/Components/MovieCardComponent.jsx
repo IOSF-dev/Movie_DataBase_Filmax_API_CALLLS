@@ -3,30 +3,30 @@ import React, { useState } from 'react'
 import { apiConfig } from '../Services/ApiConfig';
 import { useNavigate } from 'react-router-dom';
 ////////////////////////////////////////////////////////////////////
-///codex añadio array para traducir gender
+// Codex añadió un mapa para traducir los géneros.
 const genreMap = {
-  28: "Accion",
+  28: "Acción",
   12: "Aventura",
-  16: "Animacion",
+  16: "Animación",
   35: "Comedia",
   80: "Crimen",
   99: "Documental",
   18: "Drama",
   10751: "Familiar",
-  14: "Fantasia",
+  14: "Fantasía",
   36: "Historia",
   27: "Terror",
-  10402: "Musica",
+  10402: "Música",
   9648: "Misterio",
   10749: "Romance",
-  878: "Ciencia ficcion",
+  878: "Ciencia ficción",
   10770: "TV Movie",
   53: "Thriller",
-  10752: "Belica",
+  10752: "Bélica",
   37: "Western"
 };
 const MovieCardComponent = (props) => {
-  /*NOTA PARA ALEX: OYE AQUI USE EL PROPS ES EL UNICO SITIO DONDE LO HE USADO, PERO PORQUE LO VI CLARO GRACIAS AL VIDEO 56 DE REACT, EJERCICIO LISTUSER, DE OTRA FORMA LO VEO MAS "CLARO" EL CONTEXT, NO SE SI ES BUENA O MALA PRACTICA SI ESTA BIEN O ME ESTOY HACIENDO LA PICHA UN LIO. SI PUDIERAS DARME ALGUN EJERCIO PARA ESOS DOS HOOKS ESTARIA ENCANTADO*/
+  /* NOTA PARA ALEX: aquí usé props; es el único sitio donde lo he usado porque lo vi claro gracias al vídeo 56 de React, ejercicio ListUser. De otra forma veo más claro el context. No sé si es buena o mala práctica o si me estoy haciendo un lío. Si pudieras darme algún ejercicio para esos dos hooks, estaría encantado. */
   ////////////////////////////////////////////////////////////
   const [isHover, setIsHover] = useState(false);
   const { movie, viewMode } = props;
@@ -34,8 +34,8 @@ const MovieCardComponent = (props) => {
    const movieGenres = movie.genre_ids
   ?.map((id) => genreMap[id])
   .filter(Boolean)
-  .slice(0, 2) ?? [];///codex añadio map
-  const goToDetails = () => { // funcion que realiza la navegacion a details con el parametro de ID
+  .slice(0, 2) ?? []; // Codex añadió el mapeo.
+  const goToDetails = () => { // Función que realiza la navegación a details con el parámetro de ID.
     navigate(`/details/${movie.id}`)
   }
 
@@ -83,7 +83,7 @@ const MovieCardComponent = (props) => {
             <h2 className='cardContainer_List-Title'>{movie.title}</h2>
           </div>
  <div className='cardContainer_List-GenresBox'>
-              <span className='cardComponent_Desc-Label'>Generos: </span>
+              <span className='cardComponent_Desc-Label'>Géneros: </span>
               <span className='cardContainer_List-GenresText'>
                 {movieGenres.length > 0 ? movieGenres.join(" - ") : "No disponible"}
               </span>
