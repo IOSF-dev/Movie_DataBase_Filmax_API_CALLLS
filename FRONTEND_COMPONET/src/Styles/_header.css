@@ -1,18 +1,24 @@
 /*****************ROOT*************************************************************************/
 .headerComponent {
     width: 100%;
+    overflow: hidden;
 }
 
 /*----------------MAIN------------------------------------------------------------------*/
 .header_Nav {
     background-color: #212529;
-    height: 80px;
+    height: clamp(60px, 8vw, 80px); /* MODIFICADA: altura adaptable */
     color: #eee;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     border: 2px solid black;
     width: 100%;
+     box-sizing: border-box; /* AÑADIDA */
+    padding: 0 clamp(6px, 1.5vw, 18px); /* AÑADIDA */
+    gap: clamp(6px, 1vw, 16px); /* AÑADIDA */
+    flex-wrap: nowrap; /* AÑADIDA: nunca hace wrap */
+    overflow: hidden; /* AÑADIDA */
 }
 
 /*---------------FIRST-CHILD--------------------------------------------------------------------------*/
@@ -23,12 +29,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    min-width: 0; /* AÑADIDA */
 }
 
 .header_Logo {
-    width: 42%;
+     width: clamp(70px, 9vw, 160px); /* MODIFICADA: logo responsive */
     height: auto;
     cursor: pointer;
+    max-width: 100%; /* AÑADIDA */
 }
 
 /*-------------------SECOND-CHILD--------------------------------------------------------------------*/
@@ -36,51 +44,62 @@
 
     width: 33%;
     height: 100%;
-    font-size: 20px;
+    font-size: clamp(11px, 1.1vw, 20px); /* MODIFICADA: texto adaptable */
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    gap: clamp(6px, 0.8vw, 14px); /* AÑADIDA */
+    min-width: 0; /* AÑADIDA */
+    white-space: nowrap; /* AÑADIDA: evita salto de línea */
+    overflow: hidden; /* AÑADIDA */
 }
 
 .header_Box1-Item--A {
     color: #ffd166;
     cursor: pointer;
+        margin: 0; /* AÑADIDA */
+    flex-shrink: 1; /* AÑADIDA */
 }
 
 .header_Box1-Item--B {
     color: #eee;
+        margin: 0; /* AÑADIDA */
+    flex-shrink: 1; /* AÑADIDA */
 }
 
 /*-------------------LAST-CHILD---------------------------------------------------------------*/
 .header_Box2 {
-    padding-right: 10px;
+       padding-right: clamp(4px, 0.8vw, 10px); /* MODIFICADA */
     display: flex;
     justify-content: center;
     align-items: center;
 
     width: 33%;
     height: 100%;
+        gap: clamp(4px, 0.8vw, 10px); /* AÑADIDA */
+    min-width: 0; /* AÑADIDA */
 }
 
 .header_Box2-Item--A {
-    font-size: 1em;
-    padding: 6px;
-    padding-left: 10px;
+    font-size: clamp(0.72rem, 0.9vw, 1rem); /* MODIFICADA */
+    padding: 6px 10px; /* MODIFICADA */
     border-radius: 16px;
-    width: 200px;
-    height: 30px;
+    width: clamp(110px, 14vw, 200px); /* MODIFICADA */
+    height: clamp(28px, 4vw, 36px); /* MODIFICADA */
+    min-width: 0; /* AÑADIDA */
 }
 
 .header_Box2-Item--B {
     cursor: pointer;
-    padding: 6px;
-    font-size: 1.25rem;
-    margin: 10px;
+    padding: 6px 10px; /* MODIFICADA */
+    font-size: clamp(0.72rem, 1vw, 1.05rem); /* MODIFICADA */
+    margin: 0; /* MODIFICADA */
     border-radius: 16px;
-    width: 125px;
-    height: 45px;
+    width: clamp(78px, 9vw, 125px); /* MODIFICADA */
+    height: clamp(32px, 4.6vw, 45px); /* MODIFICADA */
     background-color: #e58f05;
     color: #eee;
+    flex-shrink: 0; /* AÑADIDA */
 }
 
 /********************************************************************************/
