@@ -92,7 +92,7 @@ const MovieCardComponent = (props) => {
             <p className='cardContainer_List-Box2--Text'><span className="cardComponent_Desc-Label">Estreno: </span>{movie.release_date}</p>
             <p className='cardContainer_List-Box2--Text'> <span className='cardComponent_Desc-Label'> Score:</span> {movie.vote_average} / ({movie.vote_count})</p>
              
-            <p className="cardComponent_Desc-Label" style={{ marginTop: "2%" }}>Sinopsis...</p>
+            <p className="cardComponent_Desc-Label" >Sinopsis...</p>
           </div>
         </section>
       )}
